@@ -1,0 +1,16 @@
+{
+  "$schema": "https://biomejs.dev/schemas/latest/schema.json",
+  "extends": ["@regardio/system/biome"],
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["**", "!**/.turbo/**/*", "!**/dist/**/*"]
+  },
+  "linter": {
+    "rules": {
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      }
+    }
+  },
+  "root": true
+}

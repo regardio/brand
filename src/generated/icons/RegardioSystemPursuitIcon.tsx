@@ -1,0 +1,27 @@
+import type { SVGProps } from 'react';
+
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgRegardioSystemPursuitIcon = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
+  <svg
+    aria-labelledby={titleId}
+    height="1em"
+    viewBox="0 0 1024 1024"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    {title ? <title id={titleId}>{title}</title> : null}
+    <path
+      className="fill-yellow-400"
+      d="M820.13 842.44c-102.19-5.26-305.95-40.93-305.95-40.93s-208.34 29.5-312.15 34.79c-7.77.4-14.58-6.83-14.1-14.72 13.11-213.72 1.09-412.76-6.92-618.82-.32-7.9 5.99-14.86 14.09-14.72 106.18 1.83 313.1 24.25 313.1 24.25s211.03-26.55 320.71-30.63c8.1-.3 14.41 6.67 14.09 14.73-8.18 210.34-8.51 420.78-8.76 631.33 0 8.07-6.32 14.67-14.1 14.73z"
+    />
+  </svg>
+);
+export default SvgRegardioSystemPursuitIcon;

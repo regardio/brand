@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "noEmit": false,
+    "outDir": "./dist",
+    "preserveWatchOutput": true,
+    "removeComments": true,
+    "rootDir": "./src",
+    "sourceMap": false
+  },
+  "exclude": ["dist/**/*"],
+  "extends": "./tsconfig.json"
+}

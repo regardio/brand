@@ -1,0 +1,19 @@
+const {
+  tailwindFillsAndStrokesPlugin,
+} = require('./scripts/svgo-plugin-tailwind-fills-and-strokes.cjs');
+
+module.exports = {
+  plugins: [
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          cleanupIds: false,
+          removeUselessDefs: false,
+          removeViewBox: false,
+        },
+      },
+    },
+    tailwindFillsAndStrokesPlugin,
+  ],
+};

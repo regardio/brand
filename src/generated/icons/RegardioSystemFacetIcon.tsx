@@ -1,0 +1,27 @@
+import type { SVGProps } from 'react';
+
+interface SVGRProps {
+  title?: string;
+  titleId?: string;
+}
+const SvgRegardioSystemFacetIcon = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
+  <svg
+    aria-labelledby={titleId}
+    height="1em"
+    viewBox="0 0 1024 1024"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    {title ? <title id={titleId}>{title}</title> : null}
+    <path
+      className="fill-teal-400"
+      d="M829.99 688.37c-4.1-117.55-7.13-235.11-9.13-352.69-.1-5.87-3.12-11.32-7.95-14.28-96.69-59.57-196.31-117.07-293.24-169.57-4.84-2.63-10.8-2.42-15.64.54-96.86 59.18-196.41 120.04-293.18 179.68-4.83 2.97-7.85 8.2-7.96 13.73-2.06 110.76-5 221.46-8.88 332.07-.19 5.52 2.65 10.75 7.47 13.73 96.81 59.73 199.32 120.73 302.07 180.02 5.13 2.97 11.46 3.19 16.6.56 102.82-52.38 205.57-109.92 302.38-169.52 4.83-2.97 7.66-8.41 7.46-14.28z"
+    />
+  </svg>
+);
+export default SvgRegardioSystemFacetIcon;
