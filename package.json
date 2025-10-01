@@ -32,7 +32,7 @@
   "private": false,
   "scripts": {
     "build": "exec-tsc --project tsconfig.build.json",
-    "clean": "exec-clean .turbo dist node_modules src/generated",
+    "clean": "exec-clean .turbo dist src/generated",
     "dev": "exec-tsc --project tsconfig.build.json --watch",
     "generate": "exec-s generate:* lint",
     "generate:compass-base-sprite": "exec-ts scripts/convert-svgs-to-sprite.ts ./src/svg/compass-base ./src/generated/sprites/compass-base.svg",
