@@ -11,5 +11,6 @@
         "noSvgWithoutTitle": "off"
       }
     }
-  }
+  },
+  "root": true
 }
