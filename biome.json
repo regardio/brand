@@ -1,6 +1,6 @@
 {
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
-  "extends": ["@regardio/system/biome"],
+  "extends": ["../../regardio/system/src/biome/preset.json"],
   "linter": {
     "rules": {
       "a11y": {
