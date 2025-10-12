@@ -28,18 +28,9 @@ async function convertSvgsToSprite({ inputDir, outputPath }: GeneratorOptions) {
     files.map(async (file) => {
       const input = await Bun.file(`${inputDir}/${file}`).text();
 
-      // Process with SVGO using the Tailwind fills and strokes plugin
       const optimized = optimize(input, {
         plugins: [
-          {
-            name: 'preset-default',
-            params: {
-              overrides: {
-                // Keep viewBox for proper scaling
-                removeViewBox: false,
-              },
-            },
-          },
+          'preset-default',
           // Use the existing Tailwind fills and strokes plugin
           tailwindFillsAndStrokesPlugin,
         ],

@@ -10,7 +10,6 @@ module.exports = {
         overrides: {
           cleanupIds: false,
           removeUselessDefs: false,
-          removeViewBox: false,
         },
       },
     },
