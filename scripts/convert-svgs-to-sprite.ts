@@ -1,4 +1,6 @@
-import { mkdir } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { parseHTML } from 'linkedom';
 import { optimize } from 'svgo';
 import { tailwindFillsAndStrokesPlugin } from './svgo-plugin-tailwind-fills-and-strokes.cjs';
@@ -11,10 +13,26 @@ interface GeneratorOptions {
 const svgRegex = /\.svg$/;
 
 async function convertSvgsToSprite({ inputDir, outputPath }: GeneratorOptions) {
-  const files: string[] = [];
-  for await (const file of new Bun.Glob('**/*.svg').scan({ cwd: inputDir })) {
-    files.push(file);
+  // Recursively find all SVG files
+  async function findSvgFiles(dir: string, baseDir: string = dir): Promise<string[]> {
+    const entries = await readdir(dir, { withFileTypes: true });
+    const files: string[] = [];
+
+    for (const entry of entries) {
+      const fullPath = join(dir, entry.name);
+      if (entry.isDirectory()) {
+        files.push(...(await findSvgFiles(fullPath, baseDir)));
+      } else if (entry.isFile() && entry.name.endsWith('.svg')) {
+        // Get relative path from base directory using path.relative
+        const relativePath = relative(baseDir, fullPath);
+        files.push(relativePath);
+      }
+    }
+
+    return files;
   }
+
+  const files = await findSvgFiles(inputDir);
 
   if (files.length === 0) {
     console.log(`No SVG files found in ${inputDir}`);
@@ -26,7 +44,7 @@ async function convertSvgsToSprite({ inputDir, outputPath }: GeneratorOptions) {
   // Generate sprite file (always overwrite)
   const symbols = await Promise.all(
     files.map(async (file) => {
-      const input = await Bun.file(`${inputDir}/${file}`).text();
+      const input = await readFile(join(inputDir, file), 'utf-8');
 
       const optimized = optimize(input, {
         plugins: [
@@ -77,18 +95,20 @@ async function convertSvgsToSprite({ inputDir, outputPath }: GeneratorOptions) {
     '',
   ].join('\n');
 
-  await Bun.write(outputPath, spriteContent);
+  await writeFile(outputPath, spriteContent, 'utf-8');
 
   console.log(`Generated ${files.length} sprites in ${outputPath}`);
   return spriteNames;
 }
 
-// Run generator if called directly
-if (import.meta.main) {
-  const [inputDir, outputPath] = process.argv.slice(2);
+// Run generator if called directly (ES module check)
+const isMainModule = process.argv[1] === fileURLToPath(import.meta.url);
+
+if (isMainModule) {
+  const [, , inputDir, outputPath] = process.argv;
 
   if (!inputDir || !outputPath) {
-    console.error('Usage: bun run convert-svgs-to-sprite.ts <inputDir> <outputPath>');
+    console.error('Usage: node convert-svgs-to-sprite.ts <inputDir> <outputPath>');
     process.exit(1);
   }
 

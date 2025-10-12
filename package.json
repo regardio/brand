@@ -12,9 +12,6 @@
     "node-html-parser": "7.0.1",
     "svgo": "4.0.0"
   },
-  "engines": {
-    "bun": ">=1.0.0"
-  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
