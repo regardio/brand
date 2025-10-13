@@ -151,16 +151,9 @@ function main() {
     const providerCode = generateSpriteProvider(svgContent);
     writeFileSync(join(OUTPUT_DIR, 'CompassSpriteProvider.tsx'), providerCode);
 
-    // Generate an index file
-    const indexCode = `export { CompassSprite, type CompassSpriteId, type CompassSpriteProps } from './CompassSprite';
-export { CompassSpriteProvider } from './CompassSpriteProvider';
-`;
-    writeFileSync(join(OUTPUT_DIR, 'index.ts'), indexCode);
-
     console.log('✅ Generated compass sprite components successfully!');
     console.log(`   - ${OUTPUT_DIR}/CompassSprite.tsx`);
     console.log(`   - ${OUTPUT_DIR}/CompassSpriteProvider.tsx`);
-    console.log(`   - ${OUTPUT_DIR}/index.ts`);
   } catch (error) {
     console.error('❌ Error generating compass sprite components:', error);
     process.exit(1);
