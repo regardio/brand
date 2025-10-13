@@ -28,9 +28,7 @@ while using Ensemble tools.
 ### Installation
 
 ```bash
-npm install @regardio/brand
-# or
-bun add @regardio/brand
+pnpm add @regardio/brand
 ```
 
 ## Included Assets
