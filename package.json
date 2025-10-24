@@ -1,8 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "authors": [
-    "Bernd Matzner <bernd.matzner@regard.io>"
-  ],
+  "authors": ["Bernd Matzner <bernd.matzner@regard.io>"],
   "description": "Regardio Brand Assets",
   "devDependencies": {
     "@regardio/system": "workspace:*",
@@ -103,10 +101,7 @@
       "types": "./dist/generated/sprites/CompassSpriteProvider.d.ts"
     }
   },
-  "files": [
-    "dist",
-    "src/styles/colors.css"
-  ],
+  "files": ["dist", "src/styles/colors.css"],
   "license": "CC BY-SA 4.0",
   "name": "@regardio/brand",
   "private": false,
