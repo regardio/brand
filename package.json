@@ -3,7 +3,7 @@
   "authors": ["Bernd Matzner <bernd.matzner@regard.io>"],
   "description": "Regardio Brand Assets",
   "devDependencies": {
-    "@regardio/system": "workspace:*",
+    "@regardio/dev": "workspace:*",
     "@svgr/cli": "8.1.0",
     "@svgr/plugin-jsx": "8.1.0",
     "@svgr/plugin-svgo": "8.1.0",
@@ -109,7 +109,7 @@
     "build": "exec-tsc --project tsconfig.build.json",
     "clean": "exec-clean .turbo dist src/generated",
     "dev": "exec-tsc --project tsconfig.build.json --watch",
-    "generate": "exec-s generate:* lint",
+    "generate": "exec-s generate:* styles:* lint",
     "generate:compass-base-sprite": "exec-ts scripts/convert-svgs-to-sprite.ts ./src/svg/compass-base ./src/generated/sprites/compass-base.svg",
     "generate:compass-base-sprites-components": "exec-ts scripts/build-compass-base-sprites.ts",
     "generate:icons": "svgr --icon --out-dir ./src/generated/icons -- ./src/svg/icons",
@@ -117,6 +117,8 @@
     "lint:biome": "lint-biome check --write --unsafe .",
     "lint:md": "lint-md --fix \"**/*.md\" \"!**/node_modules/**\" \"!**/dist/**\"",
     "prepare": "exec-husky",
+    "styles:spacing": "exec-utopia spacing --config ../../packages/dev/config/utopia.spacing.json --out ./src/styles/spacing.generated.css",
+    "styles:typography": "exec-utopia typography --config ../../packages/dev/config/utopia.typography.json --out ./src/styles/typography.generated.css",
     "typecheck": "exec-tsc --noEmit"
   },
   "sideEffects": false,
