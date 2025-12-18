@@ -120,7 +120,7 @@
     "lint:biome": "lint-biome check .",
     "lint:md": "lint-md \"**/*.md\" \"**/*.mdx\" \"!**/node_modules/**\" \"!**/dist/**\"",
     "prepare": "exec-husky",
-    "styles": "exec-utopia generate --config ./utopia.config.json --out ./src/generated/styles",
+    "styles": "exec-utopia generate --config ./utopia.config.json --template ./src/styles/template.css --out ./src/styles/generated/theme.css",
     "typecheck": "exec-tsc --noEmit"
   },
   "sideEffects": false,
