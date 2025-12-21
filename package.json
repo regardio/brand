@@ -4,6 +4,7 @@
   "description": "Regardio Brand Assets",
   "devDependencies": {
     "@regardio/dev": "workspace:*",
+    "@regardio/styles": "workspace:*",
     "@svgr/cli": "8.1.0",
     "@svgr/plugin-jsx": "8.1.0",
     "@svgr/plugin-svgo": "8.1.0",
@@ -120,7 +121,7 @@
     "lint:biome": "lint-biome check .",
     "lint:md": "lint-md \"**/*.md\" \"**/*.mdx\" \"!**/node_modules/**\" \"!**/dist/**\"",
     "prepare": "exec-husky",
-    "styles": "exec-utopia generate --config ./utopia.config.json --template ./src/styles/template.css --out ./src/styles/generated/theme.css",
+    "styles": "exec-utopia generate --config ./utopia.config.json --out ./src/styles/generated/theme.css",
     "typecheck": "exec-tsc --noEmit"
   },
   "sideEffects": false,
