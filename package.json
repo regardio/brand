@@ -1,8 +1,9 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
-  "authors": [
-    "Bernd Matzner <bernd.matzner@regard.io>"
-  ],
+  "author": "Bernd Matzner <bernd.matzner@regard.io>",
+  "bugs": {
+    "url": "https://github.com/regardio/brand/issues"
+  },
   "description": "Regardio Brand Assets",
   "devDependencies": {
     "@regardio/dev": "1.7.1",
@@ -115,11 +116,16 @@
     "dist",
     "src/styles/colors.css"
   ],
+  "homepage": "https://github.com/regardio/brand#readme",
   "license": "CC BY-SA 4.0",
   "name": "@regardio/brand",
   "private": false,
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/regardio/brand"
   },
   "scripts": {
     "build": "exec-tsc --project tsconfig.build.json",
@@ -144,5 +150,5 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "0.3.0"
+  "version": "0.3.1"
 }
