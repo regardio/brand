@@ -46,7 +46,7 @@ package and can be embedded as inline SVGs or referenced via your bundler.
 ### Brand Logos
 
 <!-- markdownlint-disable MD033 -->
-<p style="background:#f1eded">
+<p style="background:#f1eded; display: flex; gap: 16px; align-items: center; padding: 16px;">
   <img alt="Regardio Logo Color"
   src="./src/svg/icons/regardio-logo-color.svg" width="120" />
   <img alt="Regardio Logo Mono"
@@ -58,7 +58,7 @@ package and can be embedded as inline SVGs or referenced via your bundler.
 ### Brand Icons
 
 <!-- markdownlint-disable MD033 -->
-<p style="background:#0f3b50">
+<p style="background:#0f3b50; display: flex; gap: 16px; align-items: center; padding: 16px;">
   <img alt="Regardio Ensemble Icon Color"
   src="./src/svg/icons/regardio-ensemble-icon-color.svg" width="120" />
   <img alt="Regardio Ensemble Icon Mono"
@@ -73,7 +73,7 @@ package and can be embedded as inline SVGs or referenced via your bundler.
 ### System Icons
 
 <!-- markdownlint-disable MD033 -->
-<p>
+<p style="display: flex; gap: 16px; align-items: center; padding: 16px;">
   <img alt="Regardio System Spark Icon"
   src="./src/svg/icons/regardio-system-spark-icon.svg" width="96" />
   <img alt="Regardio System Pursuit Icon"
@@ -92,7 +92,7 @@ package and can be embedded as inline SVGs or referenced via your bundler.
 ### Compass Card
 
 <!-- markdownlint-disable MD033 -->
-<p>
+<p style="display: flex; gap: 16px; align-items: center; padding: 16px; ">
   <img alt="Sparks: Leisure – Calm"
   src="./src/svg/compass-base/spark.leisure.calm.svg" width="105" />
   <img alt="Sparks: Motivator – Strength"
