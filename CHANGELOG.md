@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.6.0
+
+### Minor Changes
+
+- file and export casing
+
 ## 0.5.1
 
 ### Patch Changes

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import RegardioCompassIcon from '../generated/icons/RegardioCompassIcon';
-import RegardioEnsembleIconColor from '../generated/icons/RegardioEnsembleIconColor';
-import RegardioEnsembleIconColorFull from '../generated/icons/RegardioEnsembleIconColorFull';
-import RegardioEnsembleIconMono from '../generated/icons/RegardioEnsembleIconMono';
-import RegardioIconColor from '../generated/icons/RegardioIconColor';
-import RegardioIconColorFull from '../generated/icons/RegardioIconColorFull';
-import RegardioIconMono from '../generated/icons/RegardioIconMono';
+import RegardioCompassIcon from '../generated/icons/regardio-compass-icon';
+import RegardioEnsembleIconColor from '../generated/icons/regardio-ensemble-icon-color';
+import RegardioEnsembleIconColorFull from '../generated/icons/regardio-ensemble-icon-color-full';
+import RegardioEnsembleIconMono from '../generated/icons/regardio-ensemble-icon-mono';
+import RegardioIconColor from '../generated/icons/regardio-icon-color';
+import RegardioIconColorFull from '../generated/icons/regardio-icon-color-full';
+import RegardioIconMono from '../generated/icons/regardio-icon-mono';
 
 const IconGrid = ({ children }: { children: React.ReactNode }) => (
   <div

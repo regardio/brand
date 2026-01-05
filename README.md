@@ -47,8 +47,7 @@ Raw SVG assets are available in `src/svg/`:
 
 Generated React components are exported from the package:
 
-- **Logos** — `@regardio/brand/logos/*`
-- **Icons** — `@regardio/brand/icons/*`
+- **Icons & Logos** — `@regardio/brand/icons/*`
 - **Sprites** — `@regardio/brand/sprites/*`
 
 ## Usage
@@ -56,8 +55,8 @@ Generated React components are exported from the package:
 ### React Components
 
 ```tsx
-import RegardioLogoColor from "@regardio/brand/logos/regardio-logo-color";
-import RegardioIconColor from "@regardio/brand/icons/regardio-color";
+import { RegardioLogoColor } from "@regardio/brand/icons/regardio-logo-color";
+import { RegardioIconColor } from "@regardio/brand/icons/regardio-icon-color";
 import { CompassSprite } from "@regardio/brand/sprites/compass-sprite";
 import { CompassSpriteProvider } from "@regardio/brand/sprites/compass-sprite-provider";
 
@@ -143,8 +142,7 @@ so the color scheme must be loaded for sprites to render correctly.
 | Export | Description |
 |--------|-------------|
 | `@regardio/brand/colors.css` | Tailwind v4 theme with Regardio color palette |
-| `@regardio/brand/logos/*` | Logo React components |
-| `@regardio/brand/icons/*` | Icon React components |
+| `@regardio/brand/icons/*` | Icon and logo React components |
 | `@regardio/brand/sprites/*` | Compass sprite components |
 
 ## License

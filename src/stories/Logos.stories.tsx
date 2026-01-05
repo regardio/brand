@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import RegardioLogoColor from '../generated/icons/RegardioLogoColor';
-import RegardioLogoColorLight from '../generated/icons/RegardioLogoColorLight';
-import RegardioLogoMono from '../generated/icons/RegardioLogoMono';
-import RegardioLogoMonoLight from '../generated/icons/RegardioLogoMonoLight';
+import RegardioLogoColor from '../generated/icons/regardio-logo-color';
+import RegardioLogoColorLight from '../generated/icons/regardio-logo-color-light';
+import RegardioLogoMono from '../generated/icons/regardio-logo-mono';
+import RegardioLogoMonoLight from '../generated/icons/regardio-logo-mono-light';
 
 const LogoContainer = ({
   children,

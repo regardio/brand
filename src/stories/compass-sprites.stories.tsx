@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { CompassSprite, type CompassSpriteId } from '../generated/sprites/CompassSprite';
-import { CompassSpriteProvider } from '../generated/sprites/CompassSpriteProvider';
+import { CompassSprite, type CompassSpriteId } from '../generated/sprites/compass-sprite';
+import { CompassSpriteProvider } from '../generated/sprites/compass-sprite-provider';
 
 const spriteIds: CompassSpriteId[] = [
   'spark.leisure.breeze',

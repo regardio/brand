@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import RegardioSystemBridgeIcon from '../generated/icons/RegardioSystemBridgeIcon';
-import RegardioSystemCircleIcon from '../generated/icons/RegardioSystemCircleIcon';
-import RegardioSystemFacetIcon from '../generated/icons/RegardioSystemFacetIcon';
-import RegardioSystemIcon from '../generated/icons/RegardioSystemIcon';
-import RegardioSystemPlanIcon from '../generated/icons/RegardioSystemPlanIcon';
-import RegardioSystemPursuitIcon from '../generated/icons/RegardioSystemPursuitIcon';
-import RegardioSystemSparkIcon from '../generated/icons/RegardioSystemSparkIcon';
+import RegardioSystemBridgeIcon from '../generated/icons/regardio-system-bridge-icon';
+import RegardioSystemCircleIcon from '../generated/icons/regardio-system-circle-icon';
+import RegardioSystemFacetIcon from '../generated/icons/regardio-system-facet-icon';
+import RegardioSystemIcon from '../generated/icons/regardio-system-icon';
+import RegardioSystemPlanIcon from '../generated/icons/regardio-system-plan-icon';
+import RegardioSystemPursuitIcon from '../generated/icons/regardio-system-pursuit-icon';
+import RegardioSystemSparkIcon from '../generated/icons/regardio-system-spark-icon';
 
 const IconGrid = ({ children }: { children: React.ReactNode }) => (
   <div
