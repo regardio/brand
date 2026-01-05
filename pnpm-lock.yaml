@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@regardio/dev':
-        specifier: 1.9.1
-        version: 1.9.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 1.9.4
+        version: 1.9.4(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(jiti@2.6.1)(lightningcss@1.30.2)(postcss@8.5.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@storybook/react-vite':
         specifier: 10.1.11
         version: 10.1.11(esbuild@0.27.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(rollup@4.54.0)(storybook@10.1.11(@testing-library/dom@10.4.1)(prettier@2.8.8)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(typescript@5.9.3)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))
@@ -26,9 +26,6 @@ importers:
       '@tailwindcss/vite':
         specifier: 4.1.18
         version: 4.1.18(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))
-      '@total-typescript/ts-reset':
-        specifier: 0.6.1
-        version: 0.6.1
       '@types/node':
         specifier: 25.0.3
         version: 25.0.3
@@ -625,10 +622,15 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@regardio/dev@1.9.1':
-    resolution: {integrity: sha512-IP45c9Kwzu3GKh/HP7yuBE7bXwUt61PNH+CcBhczgP5dSTbMhyPRm4yvJ8B3TZ4n1QMb/ebSh31mZw/G2SM5VQ==}
+  '@regardio/dev@1.9.4':
+    resolution: {integrity: sha512-2u5COju7AaCcOj711otpzp2oyMcDOipDxNLYlCgZpR9GWcHZQYs0E9MVCE87KLPA6mrDuJ/HEzdl1Jh9l97Diw==}
     engines: {node: '>=18'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.4
+    peerDependenciesMeta:
+      postcss:
+        optional: true
 
   '@rolldown/pluginutils@1.0.0-beta.53':
     resolution: {integrity: sha512-vENRlFU4YbrwVqNDZ7fLvy+JR1CRkyr01jhSiDpE1u6py3OMzQfztQU2jxykW3ALNxO4kSlqIDeYyD0Y9RcQeQ==}
@@ -3982,7 +3984,7 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@regardio/dev@1.9.1(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@regardio/dev@1.9.4(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(jiti@2.6.1)(lightningcss@1.30.2)(postcss@8.5.6)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
       '@biomejs/biome': 2.3.11
       '@changesets/changelog-github': 0.5.2
@@ -4004,6 +4006,8 @@ snapshots:
       typescript: 5.9.3
       vite: 7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0)
       vitest: 4.0.16(@types/node@25.0.3)(@vitest/ui@4.0.16)(jiti@2.6.1)(jsdom@27.4.0)(lightningcss@1.30.2)(tsx@4.21.0)
+    optionalDependencies:
+      postcss: 8.5.6
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@exodus/crypto'

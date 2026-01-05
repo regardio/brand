@@ -6,13 +6,12 @@
   },
   "description": "Regardio Brand Assets",
   "devDependencies": {
-    "@regardio/dev": "1.9.1",
+    "@regardio/dev": "1.9.4",
     "@storybook/react-vite": "10.1.11",
     "@svgr/cli": "8.1.0",
     "@svgr/plugin-jsx": "8.1.0",
     "@svgr/plugin-svgo": "8.1.0",
     "@tailwindcss/vite": "4.1.18",
-    "@total-typescript/ts-reset": "0.6.1",
     "@types/node": "25.0.3",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
@@ -112,10 +111,7 @@
       "types": "./dist/generated/sprites/CompassSpriteProvider.d.ts"
     }
   },
-  "files": [
-    "dist",
-    "src/styles/colors.css"
-  ],
+  "files": ["dist", "src/styles/colors.css"],
   "homepage": "https://github.com/regardio/brand#readme",
   "license": "CC BY-SA 4.0",
   "name": "@regardio/brand",
@@ -133,14 +129,14 @@
     "dev": "exec-tsc --project tsconfig.build.json --watch",
     "fix": "exec-p fix:*",
     "fix:biome": "lint-biome check --write --unsafe .",
-    "fix:md": "lint-md --fix \"**/*.md\" \"**/*.mdx\"",
+    "fix:md": "lint-md --fix",
     "generate": "exec-s generate:* fix:*",
     "generate:compass-base-sprite": "exec-ts scripts/convert-svgs-to-sprite.ts ./src/svg/compass-base ./src/generated/sprites/compass-base.svg",
     "generate:compass-base-sprites-components": "exec-ts scripts/build-compass-base-sprites.ts",
     "generate:icons": "svgr --icon --out-dir ./src/generated/icons -- ./src/svg/icons",
     "lint": "exec-p lint:*",
     "lint:biome": "lint-biome check .",
-    "lint:md": "lint-md \"**/*.md\" \"**/*.mdx\"",
+    "lint:md": "lint-md",
     "prepare": "exec-husky",
     "release": "flow-release",
     "storybook": "storybook dev -p 6006",
@@ -150,5 +146,5 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "0.3.2"
+  "version": "0.3.3"
 }
