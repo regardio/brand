@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.5.0
+
+### Minor Changes
+
+- fix: switch to tsup build
+
 ## 0.4.0
 
 ### Minor Changes
