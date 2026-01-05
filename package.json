@@ -7,6 +7,9 @@
   "description": "Regardio Brand Assets",
   "devDependencies": {
     "@regardio/dev": "1.9.4",
+    "@storybook/addon-a11y": "10.1.11",
+    "@storybook/addon-docs": "10.1.11",
+    "@storybook/addon-vitest": "10.1.11",
     "@storybook/react-vite": "10.1.11",
     "@svgr/cli": "8.1.0",
     "@svgr/plugin-jsx": "8.1.0",
@@ -17,15 +20,19 @@
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "5.1.2",
+    "@vitest/browser-playwright": "^4.0.16",
+    "@vitest/coverage-v8": "^4.0.16",
     "linkedom": "0.18.12",
     "node-html-parser": "7.0.1",
+    "playwright": "^1.57.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "storybook": "10.1.11",
     "svgo": "4.0.0",
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3",
-    "vite": "7.3.0"
+    "vite": "7.3.0",
+    "vitest": "^4.0.16"
   },
   "exports": {
     "./colors.css": {
@@ -147,5 +154,5 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "0.3.4"
+  "version": "0.4.0"
 }

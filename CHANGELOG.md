@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.4.0
+
+### Minor Changes
+
+- storybook addons
+
 ## 0.3.4
 
 ### Patch Changes
