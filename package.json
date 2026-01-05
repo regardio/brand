@@ -6,7 +6,7 @@
   },
   "description": "Regardio Brand Assets",
   "devDependencies": {
-    "@regardio/dev": "1.10.0",
+    "@regardio/dev": "1.10.1",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
     "@storybook/addon-vitest": "10.1.11",
@@ -130,10 +130,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/regardio/brand"
+    "url": "git+https://github.com/regardio/brand.git"
   },
   "scripts": {
-    "build": "tsup && exec-ts ../dev/src/bin/post-build-exports.ts --dist dist/generated --preserve \"./colors.css\" && pnpm fix",
+    "build": "tsup && post-build-exports --dist dist/generated --preserve \"./colors.css\" && pnpm fix",
     "clean": "exec-clean .turbo dist src/generated",
     "dev": "tsup --watch",
     "fix": "exec-p fix:*",
@@ -155,5 +155,5 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "0.6.0"
+  "version": "0.6.1"
 }
