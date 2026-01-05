@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.3.0
+
+### Minor Changes
+
+- add storybook
+
 ## 0.2.0
 
 - Remove utopia styles dependency (now using fluid-tailwindcss)

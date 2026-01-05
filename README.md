@@ -3,115 +3,153 @@
 > **Design system and branding for the Regardio ecosystem**
 
 Regardio Brand provides the visual identity, design tokens, and brand guidelines
-for all Regardio applications. It ensures consistent visual language and user
-experience across the entire toolkit while supporting customization for
-different deployment contexts.
+for all Regardio applications. The package includes both raw SVG files and
+ready-to-use React components.
 
-## What is Regardio Brand?
-
-Regardio Brand delivers comprehensive design system including:
-
-- **Design Tokens** - Colors, typography, spacing, and visual constants
-- **Brand Guidelines** - Logo usage, voice, tone, and visual identity standards
-- **Asset Library** - Icons, illustrations, and branded graphics
-- **Component Specifications** - Design specifications for UI components
-- **Theme Variants** - Light/dark modes and accessibility considerations
-- **Brand Extensions** - Guidelines for custom implementations and
-white-labeling
-
-This package serves as the foundation for visual consistency across all
-Ensemble applications and enables organizations to maintain brand coherence
-while using Ensemble tools.
-
-## Getting Started
-
-### Installation
+## Installation
 
 ```bash
 pnpm add @regardio/brand
 ```
 
-## Included Assets
+## Asset Catalog
 
-The SVG assets live in `src/svg/` and are organized into:
+Run Storybook to browse the complete asset catalog:
 
-- `icons/` — Wordmarks, product marks, and system icons for the Regardio brand
-and the Regardio System
-- `compass-base/` — System primitives and compositions (facets, steps, sparks,
-bridges, pointers) used across product UI and documentation
+```bash
+pnpm storybook
+```
 
-Below are a few representative examples. Files are served directly from this
-package and can be embedded as inline SVGs or referenced via your bundler.
+This opens an interactive catalog at `http://localhost:6006` with all icons,
+logos, colors, and compass sprites.
 
-### Brand Logos
+## Sample Assets
 
 <!-- markdownlint-disable MD033 -->
 <p style="background:#f1eded; display: flex; gap: 16px; align-items: center; padding: 16px;">
-  <img alt="Regardio Logo Color"
-  src="./src/svg/icons/regardio-logo-color.svg" width="120" />
-  <img alt="Regardio Logo Mono"
-  src="./src/svg/icons/regardio-logo-mono.svg" width="120" />
-
+  <img alt="Regardio Logo" src="./src/svg/icons/regardio-logo-color.svg" width="120" />
+  <img alt="Regardio Icon" src="./src/svg/icons/regardio-icon-color.svg" width="48" />
+  <img alt="Ensemble Icon" src="./src/svg/icons/regardio-ensemble-icon-color.svg" width="48" />
+  <img alt="System Icon" src="./src/svg/icons/regardio-system-icon.svg" width="48" />
 </p>
 <!-- markdownlint-enable MD033 -->
 
-### Brand Icons
+## Asset Categories
 
-<!-- markdownlint-disable MD033 -->
-<p style="background:#0f3b50; display: flex; gap: 16px; align-items: center; padding: 16px;">
-  <img alt="Regardio Ensemble Icon Color"
-  src="./src/svg/icons/regardio-ensemble-icon-color.svg" width="120" />
-  <img alt="Regardio Ensemble Icon Mono"
-  src="./src/svg/icons/regardio-ensemble-icon-mono.svg" width="120" />
-  <img alt="Regardio Compass Icon"
-  src="./src/svg/icons/regardio-compass-icon.svg" width="120" />
-  <img alt="Regardio System Icon"
-  src="./src/svg/icons/regardio-system-icon.svg" width="120" />
-</p>
-<!-- markdownlint-enable MD033 -->
+### SVG Files
 
-### System Icons
+Raw SVG assets are available in `src/svg/`:
 
-<!-- markdownlint-disable MD033 -->
-<p style="display: flex; gap: 16px; align-items: center; padding: 16px;">
-  <img alt="Regardio System Spark Icon"
-  src="./src/svg/icons/regardio-system-spark-icon.svg" width="96" />
-  <img alt="Regardio System Pursuit Icon"
-  src="./src/svg/icons/regardio-system-pursuit-icon.svg" width="96" />
-  <img alt="Regardio System Circle Icon"
-  src="./src/svg/icons/regardio-system-circle-icon.svg" width="96" />
-  <img alt="Regardio System Facet Icon"
-  src="./src/svg/icons/regardio-system-facet-icon.svg" width="96" />
-  <img alt="Regardio System Plan Icon"
-  src="./src/svg/icons/regardio-system-plan-icon.svg" width="96" />
-  <img alt="Regardio System Bridge Icon"
-  src="./src/svg/icons/regardio-system-bridge-icon.svg" width="96" />
-</p>
-<!-- markdownlint-enable MD033 -->
+- **`icons/`** — Regardio logos, icons, and system symbols
+- **`compass-base/`** — Compass sprite components (facets, sparks, bridges, pursuits)
 
-### Compass Card
+### React Components
 
-<!-- markdownlint-disable MD033 -->
-<p style="display: flex; gap: 16px; align-items: center; padding: 16px; ">
-  <img alt="Sparks: Leisure – Calm"
-  src="./src/svg/compass-base/spark.leisure.calm.svg" width="105" />
-  <img alt="Sparks: Motivator – Strength"
-  src="./src/svg/compass-base/spark.motivator.strength.svg" width="148" />
-  <img alt="Facets: Element – Spaces"
-  src="./src/svg/compass-base/facet.element.spaces.svg" width="105" />
-  <img alt="Facets: Step – Signal"
-  src="./src/svg/compass-base/facet.step.signal.bottom.svg" width="105" />
-  <img alt="Bridges: Perspective – Fulfills"
-  src="./src/svg/compass-base/bridge.perspective.fulfills.svg" width="148" />
-  <img alt="Prospects: Pointer"
-  src="./src/svg/compass-base/prospect.pointer.svg" width="105" />
-</p>
-<!-- markdownlint-enable MD033 -->
+Generated React components are exported from the package:
+
+- **Logos** — `@regardio/brand/logos/*`
+- **Icons** — `@regardio/brand/icons/*`
+- **Sprites** — `@regardio/brand/sprites/*`
+
+## Usage
+
+### React Components
+
+```tsx
+import RegardioLogoColor from "@regardio/brand/logos/regardio-logo-color";
+import RegardioIconColor from "@regardio/brand/icons/regardio-color";
+import { CompassSprite } from "@regardio/brand/sprites/compass-sprite";
+import { CompassSpriteProvider } from "@regardio/brand/sprites/compass-sprite-provider";
+
+function App() {
+  return (
+    <CompassSpriteProvider>
+      <RegardioLogoColor style={{ width: 200 }} />
+      <RegardioIconColor style={{ fontSize: 48 }} />
+      <CompassSprite id="spark.leisure.calm" width={80} height={80} />
+    </CompassSpriteProvider>
+  );
+}
+```
+
+### CompassSpriteProvider
+
+The `CompassSpriteProvider` embeds SVG symbol definitions for all compass sprites
+directly into the DOM. Include it **once** at the root of your application:
+
+```tsx
+import { CompassSpriteProvider } from "@regardio/brand/sprites/compass-sprite-provider";
+
+function App() {
+  return (
+    <CompassSpriteProvider>
+      {/* Your app content */}
+    </CompassSpriteProvider>
+  );
+}
+```
+
+Then use `CompassSprite` anywhere in your app to reference sprites by ID:
+
+```tsx
+import { CompassSprite } from "@regardio/brand/sprites/compass-sprite";
+
+<CompassSprite id="spark.leisure.calm" width={80} height={80} />
+<CompassSprite id="facet.element.people" width={60} height={80} />
+<CompassSprite id="bridge.perspective.enables" width={100} height={70} />
+```
+
+### Regardio Color Scheme with Tailwind CSS
+
+Import `colors.css` to use the Regardio color palette with Tailwind CSS v4:
+
+```tsx
+import "@regardio/brand/colors.css";
+```
+
+This provides CSS custom properties using the `@theme` directive, making colors
+available as Tailwind utilities. The palette includes:
+
+- **coral**, **orange**, **yellow**, **olive**, **lime**, **green**, **teal**, **cyan**, **blue**, **purple**, **pink**, **red** — full spectrum
+- **gray** — neutral tones with warm undertones
+- **white**, **black** — base colors
+
+Each color has shades from `50` (lightest) to `950` (darkest):
+
+```html
+<div class="bg-coral-500 text-white">Coral background</div>
+<div class="text-teal-700">Teal text</div>
+<div class="border-purple-300">Purple border</div>
+```
+
+The compass sprites use these colors via Tailwind classes (e.g., `fill-green-300`),
+so the color scheme must be loaded for sprites to render correctly.
+
+## Scripts
+
+| Script | Description |
+|--------|-------------|
+| `pnpm build` | Build TypeScript to `dist/` |
+| `pnpm dev` | Watch mode for development |
+| `pnpm generate` | Regenerate all React components from SVGs |
+| `pnpm storybook` | Launch Storybook asset catalog |
+| `pnpm storybook:build` | Build static Storybook site |
+| `pnpm lint` | Run linting checks |
+| `pnpm fix` | Auto-fix linting issues |
+| `pnpm typecheck` | TypeScript type checking |
+
+## Exports
+
+| Export | Description |
+|--------|-------------|
+| `@regardio/brand/colors.css` | Tailwind v4 theme with Regardio color palette |
+| `@regardio/brand/logos/*` | Logo React components |
+| `@regardio/brand/icons/*` | Icon React components |
+| `@regardio/brand/sprites/*` | Compass sprite components |
 
 ## License
 
-**Creative Commons Attribution-ShareAlike 4.0 International** (CC BY-SA 4.0):
-Regardio Brand assets and guidelines are freely available for use and adaptation.
+**CC BY-SA 4.0** — Regardio Brand assets are freely available for use and adaptation.
 
 ---
 
