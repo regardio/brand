@@ -30,7 +30,7 @@
     "storybook": "10.1.11",
     "svgo": "4.0.0",
     "tailwindcss": "4.1.18",
-    "tsup": "8.5.0",
+    "tsup": "8.5.1",
     "typescript": "5.9.3",
     "vite": "7.3.0",
     "vitest": "^4.0.16"
@@ -155,5 +155,5 @@
   },
   "sideEffects": false,
   "type": "module",
-  "version": "0.5.0"
+  "version": "0.5.1"
 }

@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.5.1
+
+### Patch Changes
+
+- chore: deps
+
 ## 0.5.0
 
 ### Minor Changes
