@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.3.4
+
+### Patch Changes
+
+- tsreset
+
 ## 0.3.3
 
 ### Patch Changes
