@@ -6,7 +6,7 @@
   },
   "description": "Regardio Brand Assets",
   "devDependencies": {
-    "@regardio/dev": "1.10.1",
+    "@regardio/dev": "1.10.2",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
     "@storybook/addon-vitest": "10.1.11",
