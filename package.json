@@ -1,12 +1,138 @@
 {
   "$schema": "https://www.schemastore.org/package.json",
-  "author": "Bernd Matzner <bernd.matzner@regard.io>",
+  "name": "@regardio/brand",
+  "version": "0.6.2",
+  "private": false,
+  "description": "Regardio Brand Assets",
+  "homepage": "https://github.com/regardio/brand#readme",
   "bugs": {
     "url": "https://github.com/regardio/brand/issues"
   },
-  "description": "Regardio Brand Assets",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regardio/brand.git"
+  },
+  "license": "CC BY-SA 4.0",
+  "author": "Bernd Matzner <bernd.matzner@regard.io>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    "./colors.css": {
+      "default": "./src/styles/colors.css"
+    },
+    "./icons/regardio-compass-icon": {
+      "types": "./dist/generated/icons/regardio-compass-icon.d.ts",
+      "import": "./dist/generated/icons/regardio-compass-icon.js"
+    },
+    "./icons/regardio-ensemble-icon-color": {
+      "types": "./dist/generated/icons/regardio-ensemble-icon-color.d.ts",
+      "import": "./dist/generated/icons/regardio-ensemble-icon-color.js"
+    },
+    "./icons/regardio-ensemble-icon-color-full": {
+      "types": "./dist/generated/icons/regardio-ensemble-icon-color-full.d.ts",
+      "import": "./dist/generated/icons/regardio-ensemble-icon-color-full.js"
+    },
+    "./icons/regardio-ensemble-icon-mono": {
+      "types": "./dist/generated/icons/regardio-ensemble-icon-mono.d.ts",
+      "import": "./dist/generated/icons/regardio-ensemble-icon-mono.js"
+    },
+    "./icons/regardio-icon-color": {
+      "types": "./dist/generated/icons/regardio-icon-color.d.ts",
+      "import": "./dist/generated/icons/regardio-icon-color.js"
+    },
+    "./icons/regardio-icon-color-full": {
+      "types": "./dist/generated/icons/regardio-icon-color-full.d.ts",
+      "import": "./dist/generated/icons/regardio-icon-color-full.js"
+    },
+    "./icons/regardio-icon-mono": {
+      "types": "./dist/generated/icons/regardio-icon-mono.d.ts",
+      "import": "./dist/generated/icons/regardio-icon-mono.js"
+    },
+    "./icons/regardio-logo-color": {
+      "types": "./dist/generated/icons/regardio-logo-color.d.ts",
+      "import": "./dist/generated/icons/regardio-logo-color.js"
+    },
+    "./icons/regardio-logo-color-light": {
+      "types": "./dist/generated/icons/regardio-logo-color-light.d.ts",
+      "import": "./dist/generated/icons/regardio-logo-color-light.js"
+    },
+    "./icons/regardio-logo-mono": {
+      "types": "./dist/generated/icons/regardio-logo-mono.d.ts",
+      "import": "./dist/generated/icons/regardio-logo-mono.js"
+    },
+    "./icons/regardio-logo-mono-light": {
+      "types": "./dist/generated/icons/regardio-logo-mono-light.d.ts",
+      "import": "./dist/generated/icons/regardio-logo-mono-light.js"
+    },
+    "./icons/regardio-system-bridge-icon": {
+      "types": "./dist/generated/icons/regardio-system-bridge-icon.d.ts",
+      "import": "./dist/generated/icons/regardio-system-bridge-icon.js"
+    },
+    "./icons/regardio-system-circle-icon": {
+      "types": "./dist/generated/icons/regardio-system-circle-icon.d.ts",
+      "import": "./dist/generated/icons/regardio-system-circle-icon.js"
+    },
+    "./icons/regardio-system-facet-icon": {
+      "types": "./dist/generated/icons/regardio-system-facet-icon.d.ts",
+      "import": "./dist/generated/icons/regardio-system-facet-icon.js"
+    },
+    "./icons/regardio-system-icon": {
+      "types": "./dist/generated/icons/regardio-system-icon.d.ts",
+      "import": "./dist/generated/icons/regardio-system-icon.js"
+    },
+    "./icons/regardio-system-plan-icon": {
+      "types": "./dist/generated/icons/regardio-system-plan-icon.d.ts",
+      "import": "./dist/generated/icons/regardio-system-plan-icon.js"
+    },
+    "./icons/regardio-system-pursuit-icon": {
+      "types": "./dist/generated/icons/regardio-system-pursuit-icon.d.ts",
+      "import": "./dist/generated/icons/regardio-system-pursuit-icon.js"
+    },
+    "./icons/regardio-system-spark-icon": {
+      "types": "./dist/generated/icons/regardio-system-spark-icon.d.ts",
+      "import": "./dist/generated/icons/regardio-system-spark-icon.js"
+    },
+    "./sprites/compass-sprite": {
+      "types": "./dist/generated/sprites/compass-sprite.d.ts",
+      "import": "./dist/generated/sprites/compass-sprite.js"
+    },
+    "./sprites/compass-sprite-provider": {
+      "types": "./dist/generated/sprites/compass-sprite-provider.d.ts",
+      "import": "./dist/generated/sprites/compass-sprite-provider.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src/styles/colors.css"
+  ],
+  "scripts": {
+    "build": "tsup && post-build-exports --dist dist/generated --preserve \"./colors.css\" && pnpm fix",
+    "clean": "exec-clean .turbo dist src/generated",
+    "dev": "tsup --watch",
+    "fix": "exec-p fix:*",
+    "fix:biome": "lint-biome check --write --unsafe .",
+    "fix:md": "lint-md --fix",
+    "fix:pkg": "lint-package --fix",
+    "generate": "exec-s generate:* fix:*",
+    "generate:compass-base-sprite": "exec-ts scripts/convert-svgs-to-sprite.ts ./src/svg/compass-base ./src/generated/sprites/compass-base.svg",
+    "generate:compass-base-sprites-components": "exec-ts scripts/build-compass-base-sprites.ts",
+    "generate:icons": "svgr --icon --out-dir ./src/generated/icons -- ./src/svg/icons",
+    "lint": "exec-p lint:*",
+    "lint:biome": "lint-biome check .",
+    "lint:md": "lint-md",
+    "lint:pkg": "lint-package",
+    "prepare": "exec-husky",
+    "release": "flow-release",
+    "report": "vitest run --coverage",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build -o storybook-static",
+    "test": "exec-s test:*",
+    "test:unit": "vitest run",
+    "typecheck": "exec-tsc --noEmit",
+    "version": "flow-changeset version"
+  },
   "devDependencies": {
-    "@regardio/dev": "1.10.3",
+    "@regardio/dev": "1.11.1",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
     "@storybook/addon-vitest": "10.1.11",
@@ -22,6 +148,7 @@
     "@vitejs/plugin-react": "5.1.2",
     "@vitest/browser-playwright": "4.0.16",
     "@vitest/coverage-v8": "4.0.16",
+    "@vitest/ui": "4.0.16",
     "linkedom": "0.18.12",
     "node-html-parser": "7.0.2",
     "playwright": "1.57.0",
@@ -35,125 +162,7 @@
     "vite": "7.3.1",
     "vitest": "4.0.16"
   },
-  "exports": {
-    "./colors.css": {
-      "default": "./src/styles/colors.css"
-    },
-    "./icons/regardio-compass-icon": {
-      "import": "./dist/generated/icons/regardio-compass-icon.js",
-      "types": "./dist/generated/icons/regardio-compass-icon.d.ts"
-    },
-    "./icons/regardio-ensemble-icon-color": {
-      "import": "./dist/generated/icons/regardio-ensemble-icon-color.js",
-      "types": "./dist/generated/icons/regardio-ensemble-icon-color.d.ts"
-    },
-    "./icons/regardio-ensemble-icon-color-full": {
-      "import": "./dist/generated/icons/regardio-ensemble-icon-color-full.js",
-      "types": "./dist/generated/icons/regardio-ensemble-icon-color-full.d.ts"
-    },
-    "./icons/regardio-ensemble-icon-mono": {
-      "import": "./dist/generated/icons/regardio-ensemble-icon-mono.js",
-      "types": "./dist/generated/icons/regardio-ensemble-icon-mono.d.ts"
-    },
-    "./icons/regardio-icon-color": {
-      "import": "./dist/generated/icons/regardio-icon-color.js",
-      "types": "./dist/generated/icons/regardio-icon-color.d.ts"
-    },
-    "./icons/regardio-icon-color-full": {
-      "import": "./dist/generated/icons/regardio-icon-color-full.js",
-      "types": "./dist/generated/icons/regardio-icon-color-full.d.ts"
-    },
-    "./icons/regardio-icon-mono": {
-      "import": "./dist/generated/icons/regardio-icon-mono.js",
-      "types": "./dist/generated/icons/regardio-icon-mono.d.ts"
-    },
-    "./icons/regardio-logo-color": {
-      "import": "./dist/generated/icons/regardio-logo-color.js",
-      "types": "./dist/generated/icons/regardio-logo-color.d.ts"
-    },
-    "./icons/regardio-logo-color-light": {
-      "import": "./dist/generated/icons/regardio-logo-color-light.js",
-      "types": "./dist/generated/icons/regardio-logo-color-light.d.ts"
-    },
-    "./icons/regardio-logo-mono": {
-      "import": "./dist/generated/icons/regardio-logo-mono.js",
-      "types": "./dist/generated/icons/regardio-logo-mono.d.ts"
-    },
-    "./icons/regardio-logo-mono-light": {
-      "import": "./dist/generated/icons/regardio-logo-mono-light.js",
-      "types": "./dist/generated/icons/regardio-logo-mono-light.d.ts"
-    },
-    "./icons/regardio-system-bridge-icon": {
-      "import": "./dist/generated/icons/regardio-system-bridge-icon.js",
-      "types": "./dist/generated/icons/regardio-system-bridge-icon.d.ts"
-    },
-    "./icons/regardio-system-circle-icon": {
-      "import": "./dist/generated/icons/regardio-system-circle-icon.js",
-      "types": "./dist/generated/icons/regardio-system-circle-icon.d.ts"
-    },
-    "./icons/regardio-system-facet-icon": {
-      "import": "./dist/generated/icons/regardio-system-facet-icon.js",
-      "types": "./dist/generated/icons/regardio-system-facet-icon.d.ts"
-    },
-    "./icons/regardio-system-icon": {
-      "import": "./dist/generated/icons/regardio-system-icon.js",
-      "types": "./dist/generated/icons/regardio-system-icon.d.ts"
-    },
-    "./icons/regardio-system-plan-icon": {
-      "import": "./dist/generated/icons/regardio-system-plan-icon.js",
-      "types": "./dist/generated/icons/regardio-system-plan-icon.d.ts"
-    },
-    "./icons/regardio-system-pursuit-icon": {
-      "import": "./dist/generated/icons/regardio-system-pursuit-icon.js",
-      "types": "./dist/generated/icons/regardio-system-pursuit-icon.d.ts"
-    },
-    "./icons/regardio-system-spark-icon": {
-      "import": "./dist/generated/icons/regardio-system-spark-icon.js",
-      "types": "./dist/generated/icons/regardio-system-spark-icon.d.ts"
-    },
-    "./sprites/compass-sprite": {
-      "import": "./dist/generated/sprites/compass-sprite.js",
-      "types": "./dist/generated/sprites/compass-sprite.d.ts"
-    },
-    "./sprites/compass-sprite-provider": {
-      "import": "./dist/generated/sprites/compass-sprite-provider.js",
-      "types": "./dist/generated/sprites/compass-sprite-provider.d.ts"
-    }
-  },
-  "files": ["dist", "src/styles/colors.css"],
-  "homepage": "https://github.com/regardio/brand#readme",
-  "license": "CC BY-SA 4.0",
-  "name": "@regardio/brand",
-  "private": false,
   "publishConfig": {
     "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/regardio/brand.git"
-  },
-  "scripts": {
-    "build": "tsup && post-build-exports --dist dist/generated --preserve \"./colors.css\" && pnpm fix",
-    "clean": "exec-clean .turbo dist src/generated",
-    "dev": "tsup --watch",
-    "fix": "exec-p fix:*",
-    "fix:biome": "lint-biome check --write --unsafe .",
-    "fix:md": "lint-md --fix",
-    "generate": "exec-s generate:* fix:*",
-    "generate:compass-base-sprite": "exec-ts scripts/convert-svgs-to-sprite.ts ./src/svg/compass-base ./src/generated/sprites/compass-base.svg",
-    "generate:compass-base-sprites-components": "exec-ts scripts/build-compass-base-sprites.ts",
-    "generate:icons": "svgr --icon --out-dir ./src/generated/icons -- ./src/svg/icons",
-    "lint": "exec-p lint:*",
-    "lint:biome": "lint-biome check .",
-    "lint:md": "lint-md",
-    "prepare": "exec-husky",
-    "release": "flow-release",
-    "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build -o storybook-static",
-    "typecheck": "exec-tsc --noEmit",
-    "version": "flow-changeset version"
-  },
-  "sideEffects": false,
-  "type": "module",
-  "version": "0.6.1"
+  }
 }

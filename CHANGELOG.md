@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.6.2
+
+### Patch Changes
+
+- consistent QA tools across our packages
+
 ## 0.6.1
 
 ### Patch Changes

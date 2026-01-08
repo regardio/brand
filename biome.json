@@ -2,7 +2,6 @@
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
   "extends": ["@regardio/dev/biome"],
   "files": {
-    "ignoreUnknown": true,
-    "includes": ["**"]
+    "ignoreUnknown": true
   }
 }
