@@ -1,4 +1,9 @@
 {
+  "compilerOptions": {
+    "declaration": true,
+    "isolatedDeclarations": true
+  },
+  "exclude": ["*.config.ts", "vitest.config.ts", "tsdown.config.ts"],
   "extends": "@regardio/dev/typescript/react.json",
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

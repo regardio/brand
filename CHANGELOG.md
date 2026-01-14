@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.7.0
+
+### Minor Changes
+
+- refactor: move to tsdown, explicit typings
+
 ## 0.6.2
 
 ### Patch Changes

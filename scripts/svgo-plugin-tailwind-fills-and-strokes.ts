@@ -1,33 +1,42 @@
-const fs = require('node:fs');
-const path = require('node:path');
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import type { Plugin, XastElement } from 'svgo';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+interface ColorMap {
+  [key: string]: string;
+}
 
 // Load color mappings
 const colorMapRgbToTailwind = JSON.parse(
-  fs.readFileSync(path.join(__dirname, './data/svg-color-mapping-rgb-tailwind.json'), 'utf8'),
-);
+  readFileSync(join(__dirname, './data/svg-color-mapping-rgb-tailwind.json'), 'utf8'),
+) as ColorMap;
 
-let colorMapCmykToTailwind = {};
+let colorMapCmykToTailwind: ColorMap = {};
 try {
   colorMapCmykToTailwind = JSON.parse(
-    fs.readFileSync(path.join(__dirname, './data/svg-color-mapping-cmyk-tailwind.json'), 'utf8'),
-  );
+    readFileSync(join(__dirname, './data/svg-color-mapping-cmyk-tailwind.json'), 'utf8'),
+  ) as ColorMap;
 } catch {
   console.warn('CMYK color mapping file not found, using empty mapping');
 }
 
-const colorMap = {
+const colorMap: ColorMap = {
   ...colorMapRgbToTailwind,
   ...colorMapCmykToTailwind,
 };
 
-function addTailwindClass(node, newClass) {
+function addTailwindClass(node: XastElement, newClass: string): void {
   const currentClass = node.attributes.class || '';
   const classes = new Set(currentClass.split(' ').filter(Boolean));
   classes.add(newClass);
   node.attributes.class = Array.from(classes).join(' ');
 }
 
-function convertColorToTailwindClass(color, prefix) {
+function convertColorToTailwindClass(color: string, prefix: string): string | null {
   if (!color || color === 'none' || color === 'transparent') {
     return null;
   }
@@ -41,10 +50,10 @@ function convertColorToTailwindClass(color, prefix) {
   return colorName ? `${prefix}-${colorName}` : null;
 }
 
-const tailwindFillsAndStrokesPlugin = () => {
+export const tailwindFillsAndStrokesPlugin: Plugin<void> = () => {
   return {
     element: {
-      enter: (node) => {
+      enter: (node: XastElement) => {
         const fill = node.attributes.fill;
         if (fill) {
           const fillClass = convertColorToTailwindClass(fill, 'fill');
@@ -74,5 +83,3 @@ const tailwindFillsAndStrokesPlugin = () => {
     },
   };
 };
-
-module.exports = { tailwindFillsAndStrokesPlugin };

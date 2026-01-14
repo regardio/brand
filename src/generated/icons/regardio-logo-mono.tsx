@@ -1,10 +1,15 @@
+import type React from 'react';
 import type { SVGProps } from 'react';
 
 interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-const SvgRegardioLogoMono = ({ title, titleId, ...props }: SVGProps<SVGSVGElement> & SVGRProps) => (
+const SvgRegardioLogoMono = ({
+  title,
+  titleId,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps): React.JSX.Element => (
   <svg
     aria-labelledby={titleId}
     height="1em"

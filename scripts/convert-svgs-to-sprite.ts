@@ -3,7 +3,7 @@ import { join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseHTML } from 'linkedom';
 import { optimize } from 'svgo';
-import { tailwindFillsAndStrokesPlugin } from './svgo-plugin-tailwind-fills-and-strokes.cjs';
+import { tailwindFillsAndStrokesPlugin } from './svgo-plugin-tailwind-fills-and-strokes';
 
 interface GeneratorOptions {
   inputDir: string;
@@ -12,7 +12,10 @@ interface GeneratorOptions {
 
 const svgRegex = /\.svg$/;
 
-async function convertSvgsToSprite({ inputDir, outputPath }: GeneratorOptions) {
+async function convertSvgsToSprite({
+  inputDir,
+  outputPath,
+}: GeneratorOptions): Promise<string[] | undefined> {
   // Recursively find all SVG files
   async function findSvgFiles(dir: string, baseDir: string = dir): Promise<string[]> {
     const entries = await readdir(dir, { withFileTypes: true });
@@ -49,8 +52,10 @@ async function convertSvgsToSprite({ inputDir, outputPath }: GeneratorOptions) {
       const optimized = optimize(input, {
         plugins: [
           'preset-default',
-          // Use the existing Tailwind fills and strokes plugin
-          tailwindFillsAndStrokesPlugin,
+          {
+            fn: tailwindFillsAndStrokesPlugin,
+            name: 'tailwindFillsAndStrokes',
+          },
         ],
       });
 

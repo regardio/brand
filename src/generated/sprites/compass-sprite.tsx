@@ -1,3 +1,4 @@
+import type React from 'react';
 import type { SVGProps } from 'react';
 
 export type CompassSpriteId =
@@ -70,7 +71,13 @@ export interface CompassSpriteProps extends Omit<SVGProps<SVGSVGElement>, 'child
  * Note: The compass-base.svg sprite file must be available in your application.
  * For web applications, copy it to your public directory.
  */
-export function CompassSprite({ id, size, width, height, ...props }: CompassSpriteProps) {
+export function CompassSprite({
+  id,
+  size,
+  width,
+  height,
+  ...props
+}: CompassSpriteProps): React.JSX.Element {
   const sizeProps = size ? { height: size, width: size } : { height, width };
 
   return (

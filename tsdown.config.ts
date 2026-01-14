@@ -1,14 +1,12 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 export default defineConfig({
   clean: true,
   dts: true,
   entry: ['src/generated/icons/*.tsx', 'src/generated/sprites/*.tsx'],
   external: ['react', 'react-dom', 'react/jsx-runtime'],
-  format: ['esm'],
-  minify: false,
+  format: 'esm',
   outDir: 'dist/generated',
   sourcemap: false,
-  splitting: false,
   treeshake: true,
 });

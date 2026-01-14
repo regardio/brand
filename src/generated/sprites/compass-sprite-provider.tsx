@@ -1,8 +1,10 @@
+import type React from 'react';
+
 /**
  * CompassSpriteProvider component that embeds the compass sprite definitions directly.
  * This should be included once in your application root.
  */
-export function CompassSpriteProvider() {
+export function CompassSpriteProvider(): React.JSX.Element {
   return (
     <svg
       aria-hidden="true"

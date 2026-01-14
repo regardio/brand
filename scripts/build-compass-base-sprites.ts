@@ -46,7 +46,8 @@ function extractSpritesFromSVG(svgContent: string): SpriteInfo[] {
 function generateSpriteComponent(sprites: SpriteInfo[]): string {
   const spriteIds = sprites.map((s) => `"${s.id}"`).join(' | ');
 
-  return `import type { SVGProps } from "react";
+  return `import type React from "react";
+import type { SVGProps } from "react";
 
 export type CompassSpriteId = ${spriteIds};
 
@@ -69,7 +70,7 @@ export interface CompassSpriteProps extends Omit<SVGProps<SVGSVGElement>, 'child
  * Note: The compass-base.svg sprite file must be available in your application.
  * For web applications, copy it to your public directory.
  */
-export function CompassSprite({ id, size, width, height, ...props }: CompassSpriteProps) {
+export function CompassSprite({ id, size, width, height, ...props }: CompassSpriteProps): React.JSX.Element {
   const sizeProps = size
     ? { width: size, height: size }
     : { width, height };
@@ -107,11 +108,13 @@ function generateSpriteProvider(svgContent: string): string {
     .replace(/\${/g, '\\${')
     .replace(/class=/g, 'className=');
 
-  return `/**
+  return `import type React from "react";
+
+/**
  * CompassSpriteProvider component that embeds the compass sprite definitions directly.
  * This should be included once in your application root.
  */
-export function CompassSpriteProvider() {
+export function CompassSpriteProvider(): React.JSX.Element {
   return (
     <svg
       aria-hidden="true"

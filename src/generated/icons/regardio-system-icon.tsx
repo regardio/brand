@@ -1,3 +1,4 @@
+import type React from 'react';
 import type { SVGProps } from 'react';
 
 interface SVGRProps {
@@ -8,7 +9,7 @@ const SvgRegardioSystemIcon = ({
   title,
   titleId,
   ...props
-}: SVGProps<SVGSVGElement> & SVGRProps) => (
+}: SVGProps<SVGSVGElement> & SVGRProps): React.JSX.Element => (
   <svg
     aria-labelledby={titleId}
     height="1em"
