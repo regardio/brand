@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.7.1
+
+### Patch Changes
+
+- fix: remove lock file
+
 ## 0.7.0
 
 ### Minor Changes
