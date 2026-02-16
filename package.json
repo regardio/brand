@@ -131,7 +131,7 @@
     "version": "flow-changeset version"
   },
   "devDependencies": {
-    "@regardio/dev": "1.13.3",
+    "@regardio/dev": "1.13.5",
     "@storybook/addon-a11y": "10.2.8",
     "@storybook/addon-docs": "10.2.8",
     "@storybook/addon-vitest": "10.2.8",

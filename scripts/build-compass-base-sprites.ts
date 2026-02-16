@@ -29,11 +29,11 @@ function extractSpritesFromSVG(svgContent: string): SpriteInfo[] {
 
     // Ensure both viewBox and id are defined and valid
     if (
-      viewBoxMatch &&
-      idMatch &&
-      !seenIds.has(idMatch) &&
-      idMatch.length > 1 &&
-      idMatch.includes('.')
+      viewBoxMatch
+      && idMatch
+      && !seenIds.has(idMatch)
+      && idMatch.length > 1
+      && idMatch.includes('.')
     ) {
       sprites.push({ id: idMatch, viewBox: viewBoxMatch });
       seenIds.add(idMatch);
@@ -95,12 +95,12 @@ function generateSpriteProvider(svgContent: string): string {
   // Extract the defs content (everything between <defs> and </defs>)
   const defsMatch = svgContent.match(/<defs>([\s\S]*?)<\/defs>/);
   const defsContent =
-    defsMatch?.[1] ??
-    svgContent
+    defsMatch?.[1]
+    ?? svgContent
       .replace(/<\?xml[^>]*>/, '')
       .replace(/<svg[^>]*>/, '')
-      .replace(/<\/svg>/, '') ??
-    '';
+      .replace(/<\/svg>/, '')
+    ?? '';
 
   // Escape backticks and dollar signs for template literal
   const escapedContent = defsContent
