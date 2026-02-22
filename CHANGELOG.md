@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.7.3
+
+### Patch Changes
+
+- fix: formatting and linting
+
 ## 0.7.2
 
 ### Patch Changes
