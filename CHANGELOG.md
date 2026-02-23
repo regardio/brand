@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## 0.7.4
+
+### Patch Changes
+
+- chore: dependencies
+
 ## 0.7.3
 
 ### Patch Changes
