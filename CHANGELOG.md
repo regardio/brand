@@ -1,5 +1,10 @@
 # @regardio/brand
 
+## [0.7.5] - 2026-02-26
+
+- chore: deps
+- chore: flow
+
 ## 0.7.4
 
 ### Patch Changes
