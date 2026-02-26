@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## [0.7.6] - 2026-02-26
+
+- chore(staging): auto-fix formatting
+- refactor: use flow tasks, remove changeset, update dependencies
+- chore: add private package guard to release.yml
+
 ## [0.7.5] - 2026-02-26
 
 - chore: deps
