@@ -99,10 +99,7 @@
       "types": "./dist/generated/sprites/compass-sprite-provider.d.mts"
     }
   },
-  "files": [
-    "dist",
-    "src/styles/colors.css"
-  ],
+  "files": ["dist", "src/styles/colors.css"],
   "scripts": {
     "build": "tsdown",
     "clean": "exec-clean .turbo dist src/generated",
