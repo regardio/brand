@@ -99,7 +99,10 @@
       "types": "./dist/generated/sprites/compass-sprite-provider.d.mts"
     }
   },
-  "files": ["dist", "src/styles/colors.css"],
+  "files": [
+    "dist",
+    "src/styles/colors.css"
+  ],
   "scripts": {
     "build": "tsdown",
     "clean": "exec-clean .turbo dist src/generated",
@@ -130,7 +133,7 @@
     "typecheck": "exec-tsc --noEmit"
   },
   "devDependencies": {
-    "@regardio/dev": "1.14.3",
+    "@regardio/dev": "1.15.1",
     "@storybook/addon-a11y": "10.2.13",
     "@storybook/addon-docs": "10.2.13",
     "@storybook/addon-vitest": "10.2.13",
@@ -159,8 +162,5 @@
     "typescript": "5.9.3",
     "vite": "7.3.1",
     "vitest": "4.0.18"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
