@@ -1,5 +1,9 @@
 # @regardio/brand
 
+## [0.7.7] - 2026-02-28
+
+- chore: deps
+
 ## [0.7.6] - 2026-02-26
 
 - chore(staging): auto-fix formatting
