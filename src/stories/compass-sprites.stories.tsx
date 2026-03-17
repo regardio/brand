@@ -3,55 +3,54 @@ import { CompassSprite, type CompassSpriteId } from '../generated/sprites/compas
 import { CompassSpriteProvider } from '../generated/sprites/compass-sprite-provider';
 
 const spriteIds: CompassSpriteId[] = [
-  'spark.leisure.breeze',
-  'spark.leisure.calm',
-  'spark.leisure.contemplation',
-  'spark.leisure.distance',
-  'spark.leisure.indulgence',
-  'spark.leisure.inspiration',
-  'spark.leisure.movement',
-  'spark.leisure.nearness',
-  'spark.leisure.nourishment',
-  'spark.leisure.refreshment',
-  'spark.leisure.relaxation',
-  'spark.leisure.relief',
-  'spark.motivator.flexibility',
-  'spark.motivator.orientation',
-  'spark.motivator.pathways',
-  'spark.motivator.possibilities',
-  'spark.motivator.strength',
-  'spark.motivator.structure',
-  'sparks.leisure',
-  'sparks.motivators',
-  'facet.element.means',
-  'facet.element.notions',
-  'facet.element.people',
-  'facet.element.spaces',
-  'facet.element.things',
-  'facet.element.times',
-  'facet.step.accord.bottom',
-  'facet.step.accord.top',
-  'facet.step.action.bottom',
-  'facet.step.action.top',
-  'facet.step.effect.bottom',
-  'facet.step.effect.top',
-  'facet.step.essence.bottom',
-  'facet.step.essence.top',
-  'facet.step.impulse.bottom',
-  'facet.step.impulse.top',
-  'facet.step.signal.bottom',
-  'facet.step.signal.top',
+  'zest.leisure.breeze',
+  'zest.leisure.calm',
+  'zest.leisure.contemplation',
+  'zest.leisure.distance',
+  'zest.leisure.indulgence',
+  'zest.leisure.inspiration',
+  'zest.leisure.movement',
+  'zest.leisure.nearness',
+  'zest.leisure.nourishment',
+  'zest.leisure.refreshment',
+  'zest.leisure.relaxation',
+  'zest.leisure.relief',
+  'zest.motivators.flexibility',
+  'zest.motivators.orientation',
+  'zest.motivators.pathways',
+  'zest.motivators.possibilities',
+  'zest.motivators.strength',
+  'zest.motivators.structure',
+  'zest.leisure',
+  'zest.motivators',
+  'facets.elements.means',
+  'facets.elements.assets',
+  'facets.elements.people',
+  'facets.elements.spaces',
+  'facets.elements.things',
+  'facets.elements.times',
+  'facets.steps.accord.bottom',
+  'facets.steps.accord.top',
+  'facets.steps.action.bottom',
+  'facets.steps.action.top',
+  'facets.steps.effect.bottom',
+  'facets.steps.effect.top',
+  'facets.steps.essence.bottom',
+  'facets.steps.essence.top',
+  'facets.steps.impulse.bottom',
+  'facets.steps.impulse.top',
+  'facets.steps.signal.bottom',
+  'facets.steps.signal.top',
   'facets.elements',
   'facets.steps',
-  'bridge.perspective.contradicts',
-  'bridge.perspective.enables',
-  'bridge.perspective.extends',
-  'bridge.perspective.fulfills',
-  'bridge.perspective.matches',
-  'bridge.perspective.supports',
+  'bridges.perspectives.contradicts',
+  'bridges.perspectives.enables',
+  'bridges.perspectives.extends',
+  'bridges.perspectives.fulfills',
+  'bridges.perspectives.matches',
+  'bridges.perspectives.supports',
   'bridges.perspectives',
-  'prospect.pointer',
-  'pursuits.flourishing',
+  'pursuit.prospect.flourishing',
 ];
 
 const SpriteGrid = ({ children }: { children: React.ReactNode }) => (
@@ -114,11 +113,11 @@ const meta: Meta = {
 
 export default meta;
 
-export const LeisureSparks: StoryObj = {
+export const LeisureZest: StoryObj = {
   render: () => (
     <SpriteGrid>
       {spriteIds
-        .filter((id) => id.startsWith('spark.leisure.'))
+        .filter((id) => id.startsWith('zest.leisure.'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -129,11 +128,11 @@ export const LeisureSparks: StoryObj = {
   ),
 };
 
-export const MotivatorSparks: StoryObj = {
+export const MotivatorZest: StoryObj = {
   render: () => (
     <SpriteGrid>
       {spriteIds
-        .filter((id) => id.startsWith('spark.motivator.'))
+        .filter((id) => id.startsWith('zest.motivators.'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -148,7 +147,7 @@ export const FacetElements: StoryObj = {
   render: () => (
     <SpriteGrid>
       {spriteIds
-        .filter((id) => id.startsWith('facet.element.'))
+        .filter((id) => id.startsWith('facets.elements.'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -163,7 +162,7 @@ export const FacetSteps: StoryObj = {
   render: () => (
     <SpriteGrid>
       {spriteIds
-        .filter((id) => id.startsWith('facet.step.'))
+        .filter((id) => id.startsWith('facets.steps.'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -178,7 +177,7 @@ export const BridgePerspectives: StoryObj = {
   render: () => (
     <SpriteGrid>
       {spriteIds
-        .filter((id) => id.startsWith('bridge.perspective.'))
+        .filter((id) => id.startsWith('bridges.perspectives.'))
         .map((id) => (
           <SpriteCard
             id={id}
