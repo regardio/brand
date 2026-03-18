@@ -2,6 +2,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
+import type { UserConfig } from 'vite';
 import { defineConfig } from 'vitest/config';
 
 const dirname =
@@ -35,4 +36,4 @@ export default defineConfig({
       },
     ],
   },
-});
+}) satisfies UserConfig as UserConfig;

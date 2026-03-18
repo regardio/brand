@@ -1,4 +1,4 @@
-import { defineConfig } from 'tsdown';
+import { defineConfig, type UserConfig } from 'tsdown';
 
 export default defineConfig({
   clean: true,
@@ -9,4 +9,4 @@ export default defineConfig({
   outDir: 'dist',
   sourcemap: false,
   treeshake: true,
-});
+}) satisfies UserConfig as UserConfig;
