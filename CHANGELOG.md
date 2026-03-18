@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## [0.8.1] - 2026-03-18
+
+- fix: imports and docs
+- feat: explicit types for UserConfig
+- docs: styling architecture
+
 ## [0.8.0] - 2026-03-18
 
 - refactor: regardio apps are styled according to brand design system
