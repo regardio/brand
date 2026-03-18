@@ -1,5 +1,20 @@
 # @regardio/brand
 
+## [0.8.0] - 2026-03-18
+
+- refactor: regardio apps are styled according to brand design system
+- chore: deps
+- fix: exec ts directly
+- refactor: system terminology
+- refactor: remove compass assets for now
+- refactor: icon formats
+- refactor: icon colors
+- chore: deps
+- refactor: asset updates
+- refactor: assets
+- chore: deps
+- chore: deps
+
 ## [0.7.7] - 2026-02-28
 
 - chore: deps
