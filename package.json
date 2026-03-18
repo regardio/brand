@@ -17,11 +17,19 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "./colors.css": "./src/styles/colors.css",
-    "./icons/regardio-compass-icon": {
-      "import": "./dist/generated/icons/regardio-compass-icon.mjs",
-      "types": "./dist/generated/icons/regardio-compass-icon.d.mts"
+    "./button": {
+      "types": "./dist/components/button.d.mts",
+      "import": "./dist/components/button.mjs",
+      "default": "./dist/components/button.mjs"
     },
+    "./styles": {
+      "style": "./dist/styles/index.css",
+      "default": "./dist/styles/index.css"
+    },
+    "./styles/*": "./dist/styles/*",
+    "./colors.css": "./dist/styles/colors.css",
+    "./sprites/*": "./dist/generated/sprites/*",
+    "./icons/*": "./dist/generated/icons/*",
     "./icons/regardio-ensemble-icon-color": {
       "import": "./dist/generated/icons/regardio-ensemble-icon-color.mjs",
       "types": "./dist/generated/icons/regardio-ensemble-icon-color.d.mts"
@@ -99,9 +107,11 @@
       "types": "./dist/generated/sprites/compass-sprite-provider.d.mts"
     }
   },
-  "files": ["dist", "src/styles/colors.css"],
+  "files": ["dist", "src/styles", "src/components"],
   "scripts": {
-    "build": "tsdown",
+    "build": "exec-s build:tsdown build:copy-styles",
+    "build:copy-styles": "mkdir -p dist/styles && cp -r src/styles/* dist/styles/",
+    "build:tsdown": "tsdown",
     "clean": "exec-clean .turbo dist src/generated",
     "dev": "tsdown --watch",
     "fix": "exec-s fix:pkg fix:md fix:biome",
@@ -129,16 +139,21 @@
     "tsdown": "tsdown",
     "typecheck": "exec-tsc --noEmit"
   },
+  "dependencies": {
+    "@fontsource-variable/georama": "5.2.8",
+    "@regardio/react": "workspace:*",
+    "@regardio/tailwind": "workspace:*"
+  },
   "devDependencies": {
-    "@regardio/dev": "1.17.1",
-    "@storybook/addon-a11y": "10.2.19",
-    "@storybook/addon-docs": "10.2.19",
-    "@storybook/addon-vitest": "10.2.19",
-    "@storybook/react-vite": "10.2.19",
+    "@regardio/dev": "workspace:*",
+    "@storybook/addon-a11y": "10.3.0",
+    "@storybook/addon-docs": "10.3.0",
+    "@storybook/addon-vitest": "10.3.0",
+    "@storybook/react-vite": "10.3.0",
     "@svgr/cli": "8.1.0",
     "@svgr/plugin-jsx": "8.1.0",
     "@svgr/plugin-svgo": "8.1.0",
-    "@tailwindcss/vite": "4.2.1",
+    "@tailwindcss/vite": "4.2.2",
     "@total-typescript/ts-reset": "0.6.1",
     "@types/node": "25.5.0",
     "@types/react": "19.2.14",
@@ -152,9 +167,9 @@
     "playwright": "1.58.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "storybook": "10.2.19",
+    "storybook": "10.3.0",
     "svgo": "4.0.1",
-    "tailwindcss": "4.2.1",
+    "tailwindcss": "4.2.2",
     "tsdown": "0.21.4",
     "typescript": "5.9.3",
     "vite": "8.0.0",

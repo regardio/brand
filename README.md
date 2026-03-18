@@ -2,14 +2,27 @@
 
 > **Design system and branding for the Regardio ecosystem**
 
-Regardio Brand provides the visual identity, design tokens, and brand guidelines
-for all Regardio applications. The package includes both raw SVG files and
-ready-to-use React components.
+Regardio Brand provides the visual identity, design tokens, brand guidelines,
+and branded components for all Regardio applications. The package includes:
+
+- **Design system** - Colors, typography, tokens, grid layout system
+- **Branded components** - Button and other UI components with Regardio visual identity
+- **Brand assets** - SVG files and React components for logos, icons, sprites
 
 ## Installation
 
 ```bash
 pnpm add @regardio/brand
+```
+
+## Branded Components
+
+Regardio branded components represent the Regardio visual identity (flat blue, no border, ample padding, Georama bold font). Use these consistently across all Regardio applications.
+
+```tsx
+import { Button } from '@regardio/brand/button';
+
+<Button variant="primary">Click me</Button>
 ```
 
 ## Asset Catalog
@@ -124,6 +137,23 @@ Each color has shades from `50` (lightest) to `950` (darkest):
 The compass sprites use these colors via Tailwind classes (e.g., `fill-green-300`),
 so the color scheme must be loaded for sprites to render correctly.
 
+### Grid System
+
+Regardio's standard container and grid layout utilities:
+
+```tsx
+import "@regardio/brand/styles";
+
+<div className="u-container">
+  <div className="u-grid">
+    <div className="u-grid-half">Column 1</div>
+    <div className="u-grid-half">Column 2</div>
+  </div>
+</div>
+```
+
+See [Grid System documentation](./docs/grid-system.md) for complete usage guide.
+
 ## Scripts
 
 | Script | Description |
@@ -141,6 +171,8 @@ so the color scheme must be loaded for sprites to render correctly.
 
 | Export | Description |
 |--------|-------------|
+| `@regardio/brand/button` | Branded button component |
+| `@regardio/brand/styles` | Complete design system (colors, tokens, typography, grid) |
 | `@regardio/brand/colors.css` | Tailwind v4 theme with Regardio color palette |
 | `@regardio/brand/icons/*` | Icon and logo React components |
 | `@regardio/brand/sprites/*` | Compass sprite components |

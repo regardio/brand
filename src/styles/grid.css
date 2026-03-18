@@ -1,0 +1,60 @@
+/**
+ * Grid Utilities
+ * Regardio's standard container and grid layout system
+ *
+ * Uses tokens defined in tokens.css:
+ * - --spacing-grid-max: Maximum container width
+ * - --spacing-grid-gutter: Horizontal padding/gap
+ */
+@layer components {
+  /**
+   * Container with max-width and horizontal padding
+   */
+  .u-container {
+    position: relative;
+    max-width: var(--spacing-grid-max);
+    padding-inline: var(--spacing-grid-gutter);
+    margin-inline: auto;
+  }
+
+  /**
+   * 12-column CSS Grid with container queries
+   */
+  .u-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    gap: var(--spacing-grid-gutter);
+    width: 100%;
+    container-name: grid;
+    container-type: inline-size;
+  }
+
+  /**
+   * Full-width grid item spanning all 12 columns
+   */
+  .u-grid-full {
+    grid-column: 1 / -1;
+  }
+
+  /**
+   * Half-width grid item spanning 6 columns
+   */
+  .u-grid-half {
+    grid-column: span 6;
+  }
+
+  /**
+   * Third-width grid item spanning 4 columns
+   */
+  .u-grid-third {
+    grid-column: span 4;
+  }
+
+  /**
+   * Quarter-width grid item spanning 3 columns
+   */
+  .u-grid-quarter {
+    grid-column: span 3;
+  }
+}

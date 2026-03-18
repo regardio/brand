@@ -1,0 +1,27 @@
+/**
+ * @regardio/brand - Regardio Design System
+ *
+ * Complete design system including:
+ * - OKLCH color scales
+ * - Semantic design tokens
+ * - Fluid typography system
+ * - Base styles (borders, focus, selection, line-heights)
+ * - Grid layout system
+ *
+ * Import this to get the full Regardio visual language.
+ */
+
+/* OKLCH color scales */
+@import "./colors.css";
+
+/* Design tokens (breakpoints, containers, semantic colors, shadows) */
+@import "./tokens.css";
+
+/* Fluid typography system with Georama Variable font */
+@import "./typography.css";
+
+/* Base styles (borders, focus, selection, line-heights) */
+@import "./base.css";
+
+/* Grid layout system (container and grid utilities) */
+@import "./grid.css";

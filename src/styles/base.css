@@ -1,0 +1,76 @@
+/**
+ * Base Styles
+ * Regardio design decisions for foundational elements
+ */
+@layer base {
+  /* Design tokens applied to all elements */
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  /* Body typography defaults */
+  body {
+    font-feature-settings:
+      "liga" 1,
+      "dlig" 1,
+      "calt" 1,
+      "hlig" 1;
+    font-variant-ligatures: common-ligatures discretionary-ligatures contextual historical-ligatures;
+    line-height: 1.5;
+  }
+
+  /* Text wrapping improvements */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Heading typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  /* Focus ring styling */
+  :focus-visible {
+    @apply outline-2 outline-offset-2;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Links without class */
+  a:not([class]) {
+    text-underline-offset: 0.2em;
+  }
+
+  /* Prevent tiny textareas */
+  textarea:not([rows]) {
+    min-height: 10em;
+  }
+
+  /* Auto-sizing textareas (progressive enhancement) */
+  @supports (field-sizing: content) {
+    textarea {
+      field-sizing: content;
+      min-height: 3lh;
+      max-height: 50vh;
+    }
+  }
+}

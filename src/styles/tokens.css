@@ -1,0 +1,134 @@
+/**
+ * Regardio Design Tokens
+ *
+ * Core design decisions for Regardio applications:
+ * - Breakpoints and container queries
+ * - Semantic color tokens
+ * - Surface effects and shadows
+ * - Typography scales
+ *
+ * These tokens define the Regardio brand's visual language.
+ */
+
+@theme {
+  /* Explicit breakpoints - aligned with channel pattern */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1600px;
+  --breakpoint-2xl: 1920px;
+
+  /* Container queries - based on 12-column grid fractions (320px-2560px range) */
+  /* xs = 4 columns of 12 at 320px (~107px) */
+  --container-xs: 160px;
+  /* sm = 6 columns of 12 at 480px (~240px) */
+  --container-sm: 320px;
+  /* md = 8 columns of 12 at 768px (~512px) */
+  --container-md: 512px;
+  /* lg = 10 columns of 12 at 1024px (~853px) */
+  --container-lg: 768px;
+  /* xl = full width at md breakpoint */
+  --container-xl: 1024px;
+  /* 2xl = full width at lg breakpoint */
+  --container-2xl: 1280px;
+  /* 3xl = full width at xl breakpoint */
+  --container-3xl: 1600px;
+  /* 4xl = full width at 2xl breakpoint */
+  --container-4xl: 1920px;
+  /* 5xl = near max assumed width */
+  --container-5xl: 2304px;
+  /* 6xl = max assumed width */
+  --container-6xl: 2560px;
+
+  /* Semantic color tokens */
+  --color-foreground: var(--color-gray-950);
+  --color-muted-foreground: var(--color-gray-700);
+  --color-background: var(--color-gray-50);
+  --color-background-muted: var(--color-white);
+  --color-background-subtle: var(--color-gray-100);
+  --color-border: var(--color-gray-300);
+  --color-border-muted: var(--color-gray-200);
+  --color-ring: var(--color-teal-500);
+  --color-primary: var(--color-teal-600);
+  --color-primary-foreground: var(--color-white);
+  --color-primary-hover: var(--color-teal-700);
+  --color-secondary: var(--color-green-600);
+  --color-secondary-foreground: var(--color-white);
+  --color-secondary-hover: var(--color-green-700);
+  --color-accent: var(--color-lime-500);
+  --color-accent-foreground: var(--color-gray-950);
+  --color-accent-hover: var(--color-lime-600);
+  --color-muted: var(--color-gray-100);
+  --color-destructive: var(--color-red-600);
+  --color-destructive-foreground: var(--color-white);
+  --color-destructive-hover: var(--color-red-700);
+}
+
+:root {
+  /* Grid system configuration */
+  --spacing-grid-max: 1200px;
+  --spacing-grid-gutter: 1.5rem;
+
+  /* Elevation shadows - light mode */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Surface tokens for glass effects - light mode */
+  --surface: rgba(255, 255, 255, 0.74);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --surface-subtle: rgba(255, 255, 255, 0.5);
+
+  /* Inset effects - light mode */
+  --inset-glint: rgba(255, 255, 255, 0.82);
+}
+
+/* Dark mode overrides */
+.dark {
+  /* Semantic colors - dark mode */
+  --color-foreground: var(--color-gray-50);
+  --color-muted-foreground: var(--color-gray-400);
+
+  --color-background: var(--color-blue-950);
+  --color-background-muted: var(--color-blue-900);
+  --color-background-subtle: var(--color-blue-800);
+
+  --color-border: var(--color-gray-700);
+  --color-border-muted: var(--color-gray-800);
+
+  --color-ring: var(--color-teal-400);
+
+  --color-primary: var(--color-teal-400);
+  --color-primary-foreground: var(--color-gray-950);
+  --color-primary-hover: var(--color-teal-300);
+
+  --color-secondary: var(--color-green-400);
+  --color-secondary-foreground: var(--color-gray-950);
+  --color-secondary-hover: var(--color-green-300);
+
+  --color-accent: var(--color-lime-400);
+  --color-accent-foreground: var(--color-gray-950);
+  --color-accent-hover: var(--color-lime-300);
+
+  --color-muted: var(--color-gray-800);
+
+  --color-destructive: var(--color-red-500);
+  --color-destructive-foreground: var(--color-white);
+  --color-destructive-hover: var(--color-red-400);
+
+  /* Elevation shadows - dark mode */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+
+  /* Surface tokens for glass effects - dark mode */
+  --surface: color-mix(in oklab, var(--color-blue-950) 80%, transparent);
+  --surface-strong: color-mix(in oklab, var(--color-blue-950) 92%, transparent);
+  --surface-subtle: color-mix(in oklab, var(--color-blue-950) 60%, transparent);
+
+  /* Inset effects - dark mode */
+  --inset-glint: rgba(194, 247, 238, 0.14);
+}

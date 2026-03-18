@@ -1,0 +1,140 @@
+/**
+ * Typography System
+ * Fluid typography using viewport-based scaling with Georama Variable font
+ * Scales automatically between 320px and 2560px viewports
+ */
+
+@import "@fontsource-variable/georama";
+
+@theme {
+  /* Font families */
+  --font-sans: "Georama Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+
+  /* Fluid font sizes - viewport-based scaling */
+  /* Base: 16px at 320px viewport, scales to 18px at 2560px */
+  --font-size-xs: clamp(0.75rem, 0.7455rem + 0.0196vw, 0.84rem);
+  --font-size-sm: clamp(0.875rem, 0.8696rem + 0.0234vw, 0.98rem);
+  --font-size-base: clamp(1rem, 0.9937rem + 0.0272vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1.1179rem + 0.0308vw, 1.266rem);
+  --font-size-xl: clamp(1.25rem, 1.242rem + 0.0348vw, 1.406rem);
+  --font-size-2xl: clamp(1.5rem, 1.4902rem + 0.0424vw, 1.688rem);
+  --font-size-3xl: clamp(1.875rem, 1.8627rem + 0.0533vw, 2.109rem);
+  --font-size-4xl: clamp(2.25rem, 2.2353rem + 0.0641vw, 2.531rem);
+  --font-size-5xl: clamp(3rem, 2.9804rem + 0.0848vw, 3.375rem);
+  --font-size-6xl: clamp(3.75rem, 3.7255rem + 0.106vw, 4.219rem);
+  --font-size-7xl: clamp(4.5rem, 4.4706rem + 0.1272vw, 5.063rem);
+  --font-size-8xl: clamp(6rem, 5.9608rem + 0.1696vw, 6.75rem);
+  --font-size-9xl: clamp(8rem, 7.9412rem + 0.2544vw, 9rem);
+
+  /* Line heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  /* Letter spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+}
+
+@layer base {
+  /* Fluid root font size - scales from 16px at 320px to 27px at 2560px */
+  /* This makes ALL rem values fluid throughout the system */
+  html {
+    font-size: clamp(16px, 14.429px + 0.4911vw, 27px);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    font-feature-settings:
+      "liga" 1,
+      "dlig" 1,
+      "calt" 1,
+      "hlig" 1;
+    font-variant-ligatures: common-ligatures discretionary-ligatures contextual historical-ligatures;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: var(--line-height-normal);
+  }
+
+  /* Headings with fluid sizing */
+  h1 {
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+  }
+
+  h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+  }
+
+  h3 {
+    font-size: var(--font-size-3xl);
+    font-weight: 600;
+    line-height: var(--line-height-snug);
+  }
+
+  h4 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    line-height: var(--line-height-snug);
+  }
+
+  h5 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    line-height: var(--line-height-snug);
+  }
+
+  h6 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    line-height: var(--line-height-normal);
+  }
+
+  /* Code styling */
+  code {
+    padding: 2px 7px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: color-mix(in oklab, var(--color-background-muted) 82%, var(--color-background) 18%);
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+  }
+
+  pre code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+
+  pre {
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    background: var(--color-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+  }
+
+  .dark pre {
+    color: var(--color-gray-100);
+    background: oklch(15% 0.02 190);
+  }
+}
