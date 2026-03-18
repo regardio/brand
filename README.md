@@ -115,8 +115,8 @@ import { CompassSprite } from "@regardio/brand/sprites/compass-sprite";
 
 Import `colors.css` to use the Regardio color palette with Tailwind CSS v4:
 
-```tsx
-import "@regardio/brand/colors.css";
+```css
+@import "@regardio/brand/styles/colors.css";
 ```
 
 This provides CSS custom properties using the `@theme` directive, making colors
@@ -137,17 +137,33 @@ Each color has shades from `50` (lightest) to `950` (darkest):
 The compass sprites use these colors via Tailwind classes (e.g., `fill-green-300`),
 so the color scheme must be loaded for sprites to render correctly.
 
+### Design System Styles
+
+Import the complete design system (colors, tokens, typography, base styles, grid):
+
+```css
+@import "@regardio/brand/styles/index.css";
+```
+
+Or import individual style modules:
+
+```css
+@import "@regardio/brand/styles/colors.css";
+@import "@regardio/brand/styles/tokens.css";
+@import "@regardio/brand/styles/typography.css";
+@import "@regardio/brand/styles/base.css";
+@import "@regardio/brand/styles/grid.css";
+```
+
 ### Grid System
 
 Regardio's standard container and grid layout utilities:
 
-```tsx
-import "@regardio/brand/styles";
-
-<div className="u-container">
-  <div className="u-grid">
-    <div className="u-grid-half">Column 1</div>
-    <div className="u-grid-half">Column 2</div>
+```html
+<div class="u-container">
+  <div class="u-grid">
+    <div class="u-grid-half">Column 1</div>
+    <div class="u-grid-half">Column 2</div>
   </div>
 </div>
 ```
@@ -172,8 +188,7 @@ See [Grid System documentation](./docs/grid-system.md) for complete usage guide.
 | Export | Description |
 |--------|-------------|
 | `@regardio/brand/button` | Branded button component |
-| `@regardio/brand/styles` | Complete design system (colors, tokens, typography, grid) |
-| `@regardio/brand/colors.css` | Tailwind v4 theme with Regardio color palette |
+| `@regardio/brand/styles/*` | Design system CSS modules (index, colors, tokens, typography, base, grid) |
 | `@regardio/brand/icons/*` | Icon and logo React components |
 | `@regardio/brand/sprites/*` | Compass sprite components |
 

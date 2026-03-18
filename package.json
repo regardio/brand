@@ -22,12 +22,7 @@
       "import": "./dist/components/button.mjs",
       "default": "./dist/components/button.mjs"
     },
-    "./styles": {
-      "style": "./dist/styles/index.css",
-      "default": "./dist/styles/index.css"
-    },
     "./styles/*": "./dist/styles/*",
-    "./colors.css": "./dist/styles/colors.css",
     "./sprites/*": "./dist/generated/sprites/*",
     "./icons/*": "./dist/generated/icons/*",
     "./icons/regardio-ensemble-icon-color": {

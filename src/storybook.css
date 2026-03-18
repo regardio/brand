@@ -1,3 +1,3 @@
 @import "tailwindcss";
-@import "@regardio/brand/styles";
-@import "@regardio/tailwind/styles";
+@import "@regardio/brand/styles/index.css";
+@import "@regardio/tailwind/styles/index.css";
