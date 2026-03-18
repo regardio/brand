@@ -13,6 +13,8 @@ This document describes the harmonized styling architecture across all Regardio 
 - OKLCH color scales (all brand colors)
 - Semantic design tokens (colors, breakpoints, containers)
 - Fluid typography system (Georama Variable font)
+- Base styles (borders, focus, selection, line-heights)
+- Grid layout system (container and grid utilities)
 - Surface effects and shadows
 - Dark mode definitions
 - Branded components (Button, etc.) with Regardio visual identity
@@ -20,10 +22,12 @@ This document describes the harmonized styling architecture across all Regardio 
 **Exports**:
 
 ```css
-@import "@regardio/brand/styles";          /* Complete design system */
-@import "@regardio/brand/colors.css";      /* OKLCH colors only */
+@import "@regardio/brand/styles";                /* Complete design system */
+@import "@regardio/brand/styles/colors.css";     /* OKLCH colors only */
 @import "@regardio/brand/styles/tokens.css";     /* Design tokens */
 @import "@regardio/brand/styles/typography.css"; /* Typography system */
+@import "@regardio/brand/styles/base.css";       /* Base styles */
+@import "@regardio/brand/styles/grid.css";       /* Grid layout system */
 ```
 
 ```tsx
@@ -45,11 +49,11 @@ Components that represent Regardio's visual identity (flat blue, no border, ampl
 
 **Contains**:
 
+- Tailwind CSS core
+- Standard Tailwind plugins (`@tailwindcss/typography`, `fluid-tailwindcss`, `tw-animate-css`)
 - CSS reset
-- Base styles (focus states, ligatures)
-- Grid utilities (`.u-container`, `.u-grid`)
 - Animation utilities
-- Plugin re-exports (`fluid-tailwindcss`, `tailwind-variants`, `tw-animate-css`)
+- Utility functions (`tv`, `cn`, `twMerge`)
 
 **Does NOT contain**:
 
@@ -57,14 +61,15 @@ Components that represent Regardio's visual identity (flat blue, no border, ampl
 - Fonts
 - Breakpoints
 - Semantic tokens
+- Base styles (borders, focus, selection)
+- Grid layout system
 
 **Exports**:
 
 ```css
 @import "@regardio/tailwind/styles";              /* All utilities */
+@import "@regardio/tailwind/styles/plugins.css";  /* Tailwind core + plugins */
 @import "@regardio/tailwind/styles/reset.css";    /* CSS reset */
-@import "@regardio/tailwind/styles/base.css";     /* Base styles */
-@import "@regardio/tailwind/styles/grid.css";     /* Grid utilities */
 @import "@regardio/tailwind/styles/animations.css"; /* Animations */
 ```
 
@@ -74,6 +79,7 @@ import { tv, cn, twMerge } from '@regardio/tailwind/utils';
 
 **Dependencies**:
 
+- `@tailwindcss/typography` - Typography plugin
 - `tailwind-variants` - Component variant system
 - `fluid-tailwindcss` - Fluid spacing utilities
 - `tailwind-merge` - Class merging
@@ -119,30 +125,17 @@ const button = tv({
 **Example**:
 
 ```css
-/* 1. Tailwind CSS core */
-@import "tailwindcss";
+/* 1. Tailwind CSS core + plugins (typography, fluid-tailwindcss, tw-animate-css) */
+@import "@regardio/tailwind/styles/plugins.css";
 
-/* 2. Tailwind plugins */
-@plugin "@tailwindcss/typography";
-@plugin "tw-animate-css";
-@plugin "fluid-tailwindcss" {
-  minViewport: 320;
-  maxViewport: 2560;
-  useRem: true;
-  rootFontSize: 16;
-  checkAccessibility: true;
-}
-
-/* 3. Regardio design system */
+/* 2. Regardio design system (colors, tokens, typography, base, grid) */
 @import "@regardio/brand/styles";
 
-/* 4. Tailwind utilities */
+/* 3. Tailwind utilities (reset, animations) */
 @import "@regardio/tailwind/styles/reset.css";
-@import "@regardio/tailwind/styles/base.css";
-@import "@regardio/tailwind/styles/grid.css";
 @import "@regardio/tailwind/styles/animations.css";
 
-/* 5. App-specific styles */
+/* 4. App-specific styles */
 @import "./app-specific.css";
 ```
 
@@ -321,20 +314,24 @@ const button = tv({
 
 ## Package Dependencies
 
-**For applications**:
+**For applications using Regardio design system**:
 
 ```json
 {
   "dependencies": {
-    "@regardio/brand": "^0.7.7",
-    "@regardio/tailwind": "^0.3.12",
-    "@regardio/react": "^0.7.24",
-    "tailwindcss": "^4.2.1",
-    "fluid-tailwindcss": "^1.0.9",
-    "tw-animate-css": "^1.4.0"
+    "@regardio/brand": "workspace:*",
+    "@regardio/tailwind": "workspace:*",
+    "@regardio/react": "workspace:*",
+    "tailwindcss": "^4.2.0"
   }
 }
 ```
+
+**Notes**:
+
+- `tailwindcss` is required as a peer dependency
+- `@tailwindcss/typography`, `fluid-tailwindcss`, and `tw-animate-css` are bundled in `@regardio/tailwind`
+- Use `workspace:*` for monorepo development, published versions for external projects
 
 ## Summary
 
