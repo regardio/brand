@@ -54,7 +54,7 @@ Grid dimensions are defined in `tokens.css`:
 
 ```css
 :root {
-  --spacing-grid-max: 1200px;
+  --spacing-grid-max: 2560px;
   --spacing-grid-gutter: 1.5rem;
 }
 ```

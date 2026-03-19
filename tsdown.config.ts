@@ -2,6 +2,7 @@ import { defineConfig, type UserConfig } from 'tsdown';
 
 export default defineConfig({
   clean: true,
+  copy: ['src/styles'],
   dts: true,
   entry: ['src/components/*.tsx', 'src/generated/icons/*.tsx', 'src/generated/sprites/*.tsx'],
   external: ['react', 'react-dom', 'react/jsx-runtime'],

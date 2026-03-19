@@ -108,7 +108,7 @@ function generateSpriteProvider(svgContent: string): string {
     .replace(/\${/g, '\\${')
     .replace(/class=/g, 'className=');
 
-  return `import type React from "react";
+  return `import React from "react";
 
 /**
  * CompassSpriteProvider component that embeds the compass sprite definitions directly.

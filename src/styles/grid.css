@@ -1,10 +1,43 @@
 /**
- * Grid Utilities
- * Regardio's standard container and grid layout system
+ * Grid System
+ * Fluid grid based on Utopia scales for perfect square cells
  *
- * Uses tokens defined in tokens.css:
- * - --spacing-grid-max: Maximum container width
- * - --spacing-grid-gutter: Horizontal padding/gap
+ * FLUID GRID APPROACH:
+ * The grid uses fluid spacing where gutter width scales proportionally with viewport.
+ * When grid-gutter equals column width, and the same value is used for row gaps,
+ * cells become perfect squares automatically - no aspect-ratio calculations needed.
+ *
+ * CONFIGURATION:
+ * Define these tokens in your application (see utopia.css for fluid scales):
+ *
+ * ```css
+ * :root {
+ *   --spacing-grid-max: 162.5rem;           // Maximum container width
+ *   --spacing-grid-gutter: var(--space-m);  // Fluid gutter (column + row gaps)
+ * }
+ * ```
+ *
+ * USAGE WITH REACT GRID:
+ * Use @regardio/react Grid component for responsive layouts:
+ *
+ * ```tsx
+ * <Grid.Root flow="dense">
+ *   <Grid.Item span={12} spanMd={6} spanLg={4}>
+ *     Content automatically becomes square when gutter = column width
+ *   </Grid.Item>
+ * </Grid.Root>
+ * ```
+ *
+ * FLUID SPACING:
+ * Use fluid-tailwindcss utilities instead of custom classes:
+ * - fl-gap-s/m: Fluid gap from --space-s to --space-m
+ * - fl-py-m/l: Fluid vertical padding from --space-m to --space-l
+ * - flex flex-col fl-gap-xs/s: Stack with fluid gap
+ * - flex flex-wrap fl-gap-2xs/xs: Cluster with fluid gap
+ *
+ * UTOPIA CALCULATOR:
+ * Generate fluid scales at https://utopia.fyi/grid/calculator
+ * Link fluid type, spacing, and grid for a cohesive system.
  */
 @layer components {
   /**
@@ -19,6 +52,8 @@
 
   /**
    * 12-column CSS Grid with container queries
+   * Uses CSS custom properties for configurability:
+   * - --spacing-grid-gutter: Gap between grid items
    */
   .u-grid {
     display: grid;
@@ -56,5 +91,12 @@
    */
   .u-grid-quarter {
     grid-column: span 3;
+  }
+
+  /**
+   * Sixth-width grid item spanning 2 columns
+   */
+  .u-grid-sixth {
+    grid-column: span 2;
   }
 }

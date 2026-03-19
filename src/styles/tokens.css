@@ -67,7 +67,7 @@
 
 :root {
   /* Grid system configuration */
-  --spacing-grid-max: 1200px;
+  --spacing-grid-max: 2560px;
   --spacing-grid-gutter: 1.5rem;
 
   /* Elevation shadows - light mode */

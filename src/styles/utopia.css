@@ -1,0 +1,59 @@
+/**
+ * Utopia Fluid Scales
+ * Generated from https://utopia.fyi
+ *
+ * This file defines fluid type and spacing scales that adapt smoothly across viewports.
+ * Use these tokens with fluid-tailwindcss utilities or directly in your CSS.
+ *
+ * TYPOGRAPHY:
+ * Apply --step-0 to body or main container (not html to avoid interfering with other tools)
+ * Use --step-1 through --step-7 for headings and larger text
+ * Use --step--1 and --step--2 for smaller text
+ *
+ * SPACING:
+ * Use with fluid-tailwindcss: fl-gap-s/m, fl-py-m/l, etc.
+ * Or use directly: gap: var(--space-s-m)
+ *
+ * GRID:
+ * Configure grid gutter with fluid spacing for perfect square cells
+ */
+
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,2560,26,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,2xs-2xl&g=2xs,2xl,2xl,12 */
+:root {
+  --step--2: clamp(0.6944rem, 0.6451rem + 0.2468vw, 1.04rem);
+  --step--1: clamp(0.8333rem, 0.7667rem + 0.3333vw, 1.3rem);
+  --step-0: clamp(1rem, 0.9107rem + 0.4464vw, 1.625rem);
+  --step-1: clamp(1.2rem, 1.0813rem + 0.5938vw, 2.0313rem);
+  --step-2: clamp(1.44rem, 1.283rem + 0.785vw, 2.5391rem);
+  --step-3: clamp(1.728rem, 1.5215rem + 1.0327vw, 3.1738rem);
+  --step-4: clamp(2.0736rem, 1.8031rem + 1.3526vw, 3.9673rem);
+  --step-5: clamp(2.4883rem, 2.1354rem + 1.7648vw, 4.9591rem);
+  --step-6: clamp(2.986rem, 2.527rem + 2.2949vw, 6.1989rem);
+  --step-7: clamp(3.5832rem, 2.9881rem + 2.9753vw, 7.7486rem);
+}
+
+/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,2560,26,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,2xs-2xl&g=2xs,2xl,2xl,12 */
+:root {
+  --space-3xs: clamp(0.25rem, 0.2232rem + 0.1339vw, 0.4375rem);
+  --space-2xs: clamp(0.5rem, 0.4554rem + 0.2232vw, 0.8125rem);
+  --space-xs: clamp(0.75rem, 0.6786rem + 0.3571vw, 1.25rem);
+  --space-s: clamp(1rem, 0.9107rem + 0.4464vw, 1.625rem);
+  --space-m: clamp(1.5rem, 1.3661rem + 0.6696vw, 2.4375rem);
+  --space-l: clamp(2rem, 1.8214rem + 0.8929vw, 3.25rem);
+  --space-xl: clamp(3rem, 2.7321rem + 1.3393vw, 4.875rem);
+  --space-2xl: clamp(4rem, 3.6429rem + 1.7857vw, 6.5rem);
+  --space-3xl: clamp(6rem, 5.4643rem + 2.6786vw, 9.75rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, 0.1696rem + 0.4018vw, 0.8125rem);
+  --space-2xs-xs: clamp(0.5rem, 0.3929rem + 0.5357vw, 1.25rem);
+  --space-xs-s: clamp(0.75rem, 0.625rem + 0.625vw, 1.625rem);
+  --space-s-m: clamp(1rem, 0.7946rem + 1.0268vw, 2.4375rem);
+  --space-m-l: clamp(1.5rem, 1.25rem + 1.25vw, 3.25rem);
+  --space-l-xl: clamp(2rem, 1.5893rem + 2.0536vw, 4.875rem);
+  --space-xl-2xl: clamp(3rem, 2.5rem + 2.5vw, 6.5rem);
+  --space-2xl-3xl: clamp(4rem, 3.1786rem + 4.1071vw, 9.75rem);
+
+  /* Custom pairs */
+  --space-2xs-2xl: clamp(0.5rem, -0.3571rem + 4.2857vw, 6.5rem);
+}

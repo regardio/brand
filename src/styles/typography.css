@@ -1,7 +1,11 @@
 /**
  * Typography System
- * Fluid typography using viewport-based scaling with Georama Variable font
- * Scales automatically between 320px and 2560px viewports
+ * Fluid typography using Utopia scales with Georama Variable font
+ *
+ * Uses Utopia --step-* tokens for fluid type scaling.
+ * Base font size (--step-0) applied to body, not html, to avoid interfering with other tools.
+ *
+ * @link https://utopia.fyi/type/calculator
  */
 
 @import "@fontsource-variable/georama";
@@ -11,22 +15,6 @@
   --font-sans: "Georama Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono:
     ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
-
-  /* Fluid font sizes - viewport-based scaling */
-  /* Base: 16px at 320px viewport, scales to 18px at 2560px */
-  --font-size-xs: clamp(0.75rem, 0.7455rem + 0.0196vw, 0.84rem);
-  --font-size-sm: clamp(0.875rem, 0.8696rem + 0.0234vw, 0.98rem);
-  --font-size-base: clamp(1rem, 0.9937rem + 0.0272vw, 1.125rem);
-  --font-size-lg: clamp(1.125rem, 1.1179rem + 0.0308vw, 1.266rem);
-  --font-size-xl: clamp(1.25rem, 1.242rem + 0.0348vw, 1.406rem);
-  --font-size-2xl: clamp(1.5rem, 1.4902rem + 0.0424vw, 1.688rem);
-  --font-size-3xl: clamp(1.875rem, 1.8627rem + 0.0533vw, 2.109rem);
-  --font-size-4xl: clamp(2.25rem, 2.2353rem + 0.0641vw, 2.531rem);
-  --font-size-5xl: clamp(3rem, 2.9804rem + 0.0848vw, 3.375rem);
-  --font-size-6xl: clamp(3.75rem, 3.7255rem + 0.106vw, 4.219rem);
-  --font-size-7xl: clamp(4.5rem, 4.4706rem + 0.1272vw, 5.063rem);
-  --font-size-8xl: clamp(6rem, 5.9608rem + 0.1696vw, 6.75rem);
-  --font-size-9xl: clamp(8rem, 7.9412rem + 0.2544vw, 9rem);
 
   /* Line heights */
   --line-height-none: 1;
@@ -46,15 +34,9 @@
 }
 
 @layer base {
-  /* Fluid root font size - scales from 16px at 320px to 27px at 2560px */
-  /* This makes ALL rem values fluid throughout the system */
-  html {
-    font-size: clamp(16px, 14.429px + 0.4911vw, 27px);
-  }
-
   body {
     font-family: var(--font-sans);
-    font-size: var(--font-size-base);
+    font-size: var(--step-0);
     font-feature-settings:
       "liga" 1,
       "dlig" 1,
@@ -66,41 +48,41 @@
     line-height: var(--line-height-normal);
   }
 
-  /* Headings with fluid sizing */
+  /* Headings with Utopia fluid sizing */
   h1 {
-    font-size: var(--font-size-5xl);
+    font-size: var(--step-5);
     font-weight: 700;
     line-height: var(--line-height-tight);
     letter-spacing: var(--letter-spacing-tight);
   }
 
   h2 {
-    font-size: var(--font-size-4xl);
+    font-size: var(--step-4);
     font-weight: 700;
     line-height: var(--line-height-tight);
     letter-spacing: var(--letter-spacing-tight);
   }
 
   h3 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--step-3);
     font-weight: 600;
     line-height: var(--line-height-snug);
   }
 
   h4 {
-    font-size: var(--font-size-2xl);
+    font-size: var(--step-2);
     font-weight: 600;
     line-height: var(--line-height-snug);
   }
 
   h5 {
-    font-size: var(--font-size-xl);
+    font-size: var(--step-1);
     font-weight: 600;
     line-height: var(--line-height-snug);
   }
 
   h6 {
-    font-size: var(--font-size-lg);
+    font-size: var(--step-0);
     font-weight: 600;
     line-height: var(--line-height-normal);
   }

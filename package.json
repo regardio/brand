@@ -104,9 +104,7 @@
   },
   "files": ["dist", "src/styles", "src/components"],
   "scripts": {
-    "build": "exec-s build:tsdown build:copy-styles",
-    "build:copy-styles": "mkdir -p dist/styles && cp -r src/styles/* dist/styles/",
-    "build:tsdown": "tsdown",
+    "build": "tsdown",
     "clean": "exec-clean .turbo dist src/generated",
     "dev": "tsdown --watch",
     "fix": "exec-s fix:pkg fix:md fix:biome",
@@ -167,7 +165,7 @@
     "tailwindcss": "4.2.2",
     "tsdown": "0.21.4",
     "typescript": "5.9.3",
-    "vite": "8.0.0",
+    "vite": "8.0.1",
     "vitest": "4.1.0"
   }
 }

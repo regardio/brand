@@ -17,6 +17,9 @@
 /* Design tokens (breakpoints, containers, semantic colors, shadows) */
 @import "./tokens.css";
 
+/* Utopia fluid scales (type and spacing) */
+@import "./utopia.css";
+
 /* Fluid typography system with Georama Variable font */
 @import "./typography.css";
 
