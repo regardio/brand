@@ -1,5 +1,13 @@
 # @regardio/brand
 
+## [0.8.2] - 2026-03-19
+
+- refactor: asset names
+- refactor: system terminology and assets
+- refactor: exports and stories
+- refactor: system terminology 2026
+- refactor: wip grid system
+
 ## [0.8.1] - 2026-03-18
 
 - fix: imports and docs
