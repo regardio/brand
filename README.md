@@ -54,13 +54,14 @@ logos, colors, and compass sprites.
 Raw SVG assets are available in `src/svg/`:
 
 - **`icons/`** — Regardio logos, icons, and system symbols
-- **`compass-base/`** — Compass sprite components (facets, sparks, bridges, pursuits)
+- **`compass-base/`** — Compass sprite components (pursuits, needs, plans, circles, facets, bridges)
 
 ### React Components
 
 Generated React components are exported from the package:
 
 - **Icons & Logos** — `@regardio/brand/icons/*`
+- **System Layer Icons** — `@regardio/brand/icons/system-layer-*`
 - **Sprites** — `@regardio/brand/sprites/*`
 
 ## Usage
@@ -70,6 +71,7 @@ Generated React components are exported from the package:
 ```tsx
 import { RegardioLogoColor } from "@regardio/brand/icons/regardio-logo-color";
 import { RegardioIconColor } from "@regardio/brand/icons/regardio-icon-color";
+import { SystemLayerNeedsIcon } from "@regardio/brand/icons/system-layer-needs-icon";
 import { CompassSprite } from "@regardio/brand/sprites/compass-sprite";
 import { CompassSpriteProvider } from "@regardio/brand/sprites/compass-sprite-provider";
 
@@ -78,7 +80,8 @@ function App() {
     <CompassSpriteProvider>
       <RegardioLogoColor style={{ width: 200 }} />
       <RegardioIconColor style={{ fontSize: 48 }} />
-      <CompassSprite id="spark.leisure.calm" width={80} height={80} />
+      <SystemLayerNeedsIcon style={{ fontSize: 32 }} />
+      <CompassSprite id="need.leisure.calm" width={80} height={80} />
     </CompassSpriteProvider>
   );
 }
@@ -106,9 +109,9 @@ Then use `CompassSprite` anywhere in your app to reference sprites by ID:
 ```tsx
 import { CompassSprite } from "@regardio/brand/sprites/compass-sprite";
 
-<CompassSprite id="spark.leisure.calm" width={80} height={80} />
+<CompassSprite id="need.leisure.calm" width={80} height={80} />
 <CompassSprite id="facet.element.people" width={60} height={80} />
-<CompassSprite id="bridge.perspective.enables" width={100} height={70} />
+<CompassSprite id="bridge.stance.enables" width={100} height={70} />
 ```
 
 ### Regardio Color Scheme with Tailwind CSS

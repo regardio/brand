@@ -44,12 +44,17 @@ function extractSpritesFromSVG(svgContent: string): SpriteInfo[] {
 }
 
 function generateSpriteComponent(sprites: SpriteInfo[]): string {
-  const spriteIds = sprites.map((s) => `"${s.id}"`).join(' | ');
+  const spriteUnion = sprites.map((s) => `"${s.id}"`).join(' | ');
+  const spriteArray = sprites.map((s) => `"${s.id}"`).join(',\n  ');
 
   return `import type React from "react";
 import type { SVGProps } from "react";
 
-export type CompassSpriteId = ${spriteIds};
+export type CompassSpriteId = ${spriteUnion};
+
+export const compassSpriteIds: CompassSpriteId[] = [
+  ${spriteArray}
+];
 
 export interface CompassSpriteProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
   /** The sprite ID to render */
@@ -64,7 +69,7 @@ export interface CompassSpriteProps extends Omit<SVGProps<SVGSVGElement>, 'child
  * Usage:
  * \`\`\`tsx
  * <CompassSprite id="facet.step.action.bottom" className="w-8 h-8" />
- * <CompassSprite id="spark.motivator.possibilities" size={24} />
+ * <CompassSprite id="need.drive.possibilities" size={24} />
  * \`\`\`
  *
  * Note: The compass-base.svg sprite file must be available in your application.

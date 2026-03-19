@@ -1,58 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { CompassSprite, type CompassSpriteId } from '../generated/sprites/compass-sprite';
+import {
+  CompassSprite,
+  type CompassSpriteId,
+  compassSpriteIds,
+} from '../generated/sprites/compass-sprite';
 import { CompassSpriteProvider } from '../generated/sprites/compass-sprite-provider';
-
-const spriteIds: CompassSpriteId[] = [
-  'bridges.stances.contradicts',
-  'bridges.stances.enables',
-  'bridges.stances.extends',
-  'bridges.stances.fulfills',
-  'bridges.stances.matches',
-  'bridges.stances.supports',
-  'facets.elements.assets',
-  'facets.elements.means',
-  'facets.elements.people',
-  'facets.elements.spaces',
-  'facets.elements.things',
-  'facets.elements.times',
-  'facets.steps.accord.bottom',
-  'facets.steps.accord.top',
-  'facets.steps.action.bottom',
-  'facets.steps.action.top',
-  'facets.steps.effect.bottom',
-  'facets.steps.effect.top',
-  'facets.steps.essence.bottom',
-  'facets.steps.essence.top',
-  'facets.steps.impulse.bottom',
-  'facets.steps.impulse.top',
-  'facets.steps.signal.bottom',
-  'facets.steps.signal.top',
-  'needs.drive.flexibility',
-  'needs.drive.orientation',
-  'needs.drive.pathways',
-  'needs.drive.possibilities',
-  'needs.drive.strength',
-  'needs.drive.structure',
-  'needs.leisure.breeze',
-  'needs.leisure.calm',
-  'needs.leisure.contemplation',
-  'needs.leisure.distance',
-  'needs.leisure.indulgence',
-  'needs.leisure.inspiration',
-  'needs.leisure.movement',
-  'needs.leisure.nearness',
-  'needs.leisure.nourishment',
-  'needs.leisure.refreshment',
-  'needs.leisure.relaxation',
-  'needs.leisure.relief',
-  'pursuits.prospects.flourishing',
-  'pursuits.prospects.pointer',
-  'regard.bridges.stances',
-  'regard.facets.elements',
-  'regard.facets.steps',
-  'regard.needs.drive',
-  'regard.needs.leisure',
-];
 
 const SpriteGrid = ({ children }: { children: React.ReactNode }) => (
   <div
@@ -117,7 +69,7 @@ export default meta;
 export const LeisureNeeds: StoryObj = {
   render: () => (
     <SpriteGrid>
-      {spriteIds
+      {compassSpriteIds
         .filter((id) => id.startsWith('needs.leisure.'))
         .map((id) => (
           <SpriteCard
@@ -132,7 +84,7 @@ export const LeisureNeeds: StoryObj = {
 export const DriveNeeds: StoryObj = {
   render: () => (
     <SpriteGrid>
-      {spriteIds
+      {compassSpriteIds
         .filter((id) => id.startsWith('needs.drive.'))
         .map((id) => (
           <SpriteCard
@@ -147,7 +99,7 @@ export const DriveNeeds: StoryObj = {
 export const FacetElements: StoryObj = {
   render: () => (
     <SpriteGrid>
-      {spriteIds
+      {compassSpriteIds
         .filter((id) => id.startsWith('facets.elements.'))
         .map((id) => (
           <SpriteCard
@@ -162,7 +114,7 @@ export const FacetElements: StoryObj = {
 export const FacetSteps: StoryObj = {
   render: () => (
     <SpriteGrid>
-      {spriteIds
+      {compassSpriteIds
         .filter((id) => id.startsWith('facets.steps.'))
         .map((id) => (
           <SpriteCard
@@ -177,7 +129,7 @@ export const FacetSteps: StoryObj = {
 export const BridgeStances: StoryObj = {
   render: () => (
     <SpriteGrid>
-      {spriteIds
+      {compassSpriteIds
         .filter((id) => id.startsWith('bridges.stances.'))
         .map((id) => (
           <SpriteCard
@@ -192,7 +144,7 @@ export const BridgeStances: StoryObj = {
 export const AllSprites: StoryObj = {
   render: () => (
     <SpriteGrid>
-      {spriteIds.map((id) => (
+      {compassSpriteIds.map((id) => (
         <SpriteCard
           id={id}
           key={id}

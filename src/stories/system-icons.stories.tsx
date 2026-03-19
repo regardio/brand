@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import RegardioSystemBridgesIcon from '../generated/icons/regardio-system-bridges-icon';
-import RegardioSystemCirclesIcon from '../generated/icons/regardio-system-circles-icon';
-import RegardioSystemFacetsIcon from '../generated/icons/regardio-system-facets-icon';
 import RegardioSystemIcon from '../generated/icons/regardio-system-icon';
-import RegardioSystemNeedsIcon from '../generated/icons/regardio-system-needs-icon';
-import RegardioSystemPlansIcon from '../generated/icons/regardio-system-plans-icon';
-import RegardioSystemPursuitsIcon from '../generated/icons/regardio-system-pursuits-icon';
+import SystemLayerBridgesIcon from '../generated/icons/system-layer-bridges-icon';
+import SystemLayerCirclesIcon from '../generated/icons/system-layer-circles-icon';
+import SystemLayerFacetsIcon from '../generated/icons/system-layer-facets-icon';
+import SystemLayerNeedsIcon from '../generated/icons/system-layer-needs-icon';
+import SystemLayerPlansIcon from '../generated/icons/system-layer-plans-icon';
+import SystemLayerPursuitsIcon from '../generated/icons/system-layer-pursuits-icon';
 
 const IconGrid = ({ children }: { children: React.ReactNode }) => (
   <div
@@ -53,22 +53,22 @@ export const AllSystemIcons: StoryObj = {
         <RegardioSystemIcon />
       </IconCard>
       <IconCard name="NeedsIcon">
-        <RegardioSystemNeedsIcon />
+        <SystemLayerNeedsIcon />
       </IconCard>
       <IconCard name="PursuitsIcon">
-        <RegardioSystemPursuitsIcon />
+        <SystemLayerPursuitsIcon />
       </IconCard>
       <IconCard name="CirclesIcon">
-        <RegardioSystemCirclesIcon />
+        <SystemLayerCirclesIcon />
       </IconCard>
       <IconCard name="FacetsIcon">
-        <RegardioSystemFacetsIcon />
+        <SystemLayerFacetsIcon />
       </IconCard>
       <IconCard name="PlansIcon">
-        <RegardioSystemPlansIcon />
+        <SystemLayerPlansIcon />
       </IconCard>
       <IconCard name="BridgesIcon">
-        <RegardioSystemBridgesIcon />
+        <SystemLayerBridgesIcon />
       </IconCard>
     </IconGrid>
   ),
