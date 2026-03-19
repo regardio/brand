@@ -3,28 +3,14 @@ import { CompassSprite, type CompassSpriteId } from '../generated/sprites/compas
 import { CompassSpriteProvider } from '../generated/sprites/compass-sprite-provider';
 
 const spriteIds: CompassSpriteId[] = [
-  'zest.leisure.breeze',
-  'zest.leisure.calm',
-  'zest.leisure.contemplation',
-  'zest.leisure.distance',
-  'zest.leisure.indulgence',
-  'zest.leisure.inspiration',
-  'zest.leisure.movement',
-  'zest.leisure.nearness',
-  'zest.leisure.nourishment',
-  'zest.leisure.refreshment',
-  'zest.leisure.relaxation',
-  'zest.leisure.relief',
-  'zest.motivators.flexibility',
-  'zest.motivators.orientation',
-  'zest.motivators.pathways',
-  'zest.motivators.possibilities',
-  'zest.motivators.strength',
-  'zest.motivators.structure',
-  'zest.leisure',
-  'zest.motivators',
-  'facets.elements.means',
+  'bridges.stances.contradicts',
+  'bridges.stances.enables',
+  'bridges.stances.extends',
+  'bridges.stances.fulfills',
+  'bridges.stances.matches',
+  'bridges.stances.supports',
   'facets.elements.assets',
+  'facets.elements.means',
   'facets.elements.people',
   'facets.elements.spaces',
   'facets.elements.things',
@@ -41,16 +27,31 @@ const spriteIds: CompassSpriteId[] = [
   'facets.steps.impulse.top',
   'facets.steps.signal.bottom',
   'facets.steps.signal.top',
-  'facets.elements',
-  'facets.steps',
-  'bridges.perspectives.contradicts',
-  'bridges.perspectives.enables',
-  'bridges.perspectives.extends',
-  'bridges.perspectives.fulfills',
-  'bridges.perspectives.matches',
-  'bridges.perspectives.supports',
-  'bridges.perspectives',
-  'pursuit.prospect.flourishing',
+  'needs.drive.flexibility',
+  'needs.drive.orientation',
+  'needs.drive.pathways',
+  'needs.drive.possibilities',
+  'needs.drive.strength',
+  'needs.drive.structure',
+  'needs.leisure.breeze',
+  'needs.leisure.calm',
+  'needs.leisure.contemplation',
+  'needs.leisure.distance',
+  'needs.leisure.indulgence',
+  'needs.leisure.inspiration',
+  'needs.leisure.movement',
+  'needs.leisure.nearness',
+  'needs.leisure.nourishment',
+  'needs.leisure.refreshment',
+  'needs.leisure.relaxation',
+  'needs.leisure.relief',
+  'pursuits.prospects.flourishing',
+  'pursuits.prospects.pointer',
+  'regard.bridges.stances',
+  'regard.facets.elements',
+  'regard.facets.steps',
+  'regard.needs.drive',
+  'regard.needs.leisure',
 ];
 
 const SpriteGrid = ({ children }: { children: React.ReactNode }) => (
@@ -113,11 +114,11 @@ const meta: Meta = {
 
 export default meta;
 
-export const LeisureZest: StoryObj = {
+export const LeisureNeeds: StoryObj = {
   render: () => (
     <SpriteGrid>
       {spriteIds
-        .filter((id) => id.startsWith('zest.leisure.'))
+        .filter((id) => id.startsWith('needs.leisure.'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -128,11 +129,11 @@ export const LeisureZest: StoryObj = {
   ),
 };
 
-export const MotivatorZest: StoryObj = {
+export const DriveNeeds: StoryObj = {
   render: () => (
     <SpriteGrid>
       {spriteIds
-        .filter((id) => id.startsWith('zest.motivators.'))
+        .filter((id) => id.startsWith('needs.drive.'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -173,11 +174,11 @@ export const FacetSteps: StoryObj = {
   ),
 };
 
-export const BridgePerspectives: StoryObj = {
+export const BridgeStances: StoryObj = {
   render: () => (
     <SpriteGrid>
       {spriteIds
-        .filter((id) => id.startsWith('bridges.perspectives.'))
+        .filter((id) => id.startsWith('bridges.stances.'))
         .map((id) => (
           <SpriteCard
             id={id}

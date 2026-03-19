@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import RegardioSystemBridgeIcon from '../generated/icons/regardio-system-bridge-icon';
-import RegardioSystemCircleIcon from '../generated/icons/regardio-system-circle-icon';
-import RegardioSystemFacetIcon from '../generated/icons/regardio-system-facet-icon';
+import RegardioSystemBridgesIcon from '../generated/icons/regardio-system-bridges-icon';
+import RegardioSystemCirclesIcon from '../generated/icons/regardio-system-circles-icon';
+import RegardioSystemFacetsIcon from '../generated/icons/regardio-system-facets-icon';
 import RegardioSystemIcon from '../generated/icons/regardio-system-icon';
-import RegardioSystemPlanIcon from '../generated/icons/regardio-system-plan-icon';
-import RegardioSystemPursuitIcon from '../generated/icons/regardio-system-pursuit-icon';
-import RegardioSystemSparkIcon from '../generated/icons/regardio-system-spark-icon';
+import RegardioSystemNeedsIcon from '../generated/icons/regardio-system-needs-icon';
+import RegardioSystemPlansIcon from '../generated/icons/regardio-system-plans-icon';
+import RegardioSystemPursuitsIcon from '../generated/icons/regardio-system-pursuits-icon';
 
 const IconGrid = ({ children }: { children: React.ReactNode }) => (
   <div
@@ -52,23 +52,23 @@ export const AllSystemIcons: StoryObj = {
       <IconCard name="SystemIcon">
         <RegardioSystemIcon />
       </IconCard>
-      <IconCard name="SparkIcon">
-        <RegardioSystemSparkIcon />
+      <IconCard name="NeedsIcon">
+        <RegardioSystemNeedsIcon />
       </IconCard>
-      <IconCard name="PursuitIcon">
-        <RegardioSystemPursuitIcon />
+      <IconCard name="PursuitsIcon">
+        <RegardioSystemPursuitsIcon />
       </IconCard>
-      <IconCard name="CircleIcon">
-        <RegardioSystemCircleIcon />
+      <IconCard name="CirclesIcon">
+        <RegardioSystemCirclesIcon />
       </IconCard>
-      <IconCard name="FacetIcon">
-        <RegardioSystemFacetIcon />
+      <IconCard name="FacetsIcon">
+        <RegardioSystemFacetsIcon />
       </IconCard>
-      <IconCard name="PlanIcon">
-        <RegardioSystemPlanIcon />
+      <IconCard name="PlansIcon">
+        <RegardioSystemPlansIcon />
       </IconCard>
-      <IconCard name="BridgeIcon">
-        <RegardioSystemBridgeIcon />
+      <IconCard name="BridgesIcon">
+        <RegardioSystemBridgesIcon />
       </IconCard>
     </IconGrid>
   ),

@@ -65,33 +65,33 @@
       "import": "./dist/generated/icons/regardio-logo-mono-light.mjs",
       "types": "./dist/generated/icons/regardio-logo-mono-light.d.mts"
     },
-    "./icons/regardio-system-bridge-icon": {
-      "import": "./dist/generated/icons/regardio-system-bridge-icon.mjs",
-      "types": "./dist/generated/icons/regardio-system-bridge-icon.d.mts"
+    "./icons/regardio-system-bridges-icon": {
+      "import": "./dist/generated/icons/regardio-system-bridges-icon.mjs",
+      "types": "./dist/generated/icons/regardio-system-bridges-icon.d.mts"
     },
-    "./icons/regardio-system-circle-icon": {
-      "import": "./dist/generated/icons/regardio-system-circle-icon.mjs",
-      "types": "./dist/generated/icons/regardio-system-circle-icon.d.mts"
+    "./icons/regardio-system-circles-icon": {
+      "import": "./dist/generated/icons/regardio-system-circles-icon.mjs",
+      "types": "./dist/generated/icons/regardio-system-circles-icon.d.mts"
     },
-    "./icons/regardio-system-facet-icon": {
-      "import": "./dist/generated/icons/regardio-system-facet-icon.mjs",
-      "types": "./dist/generated/icons/regardio-system-facet-icon.d.mts"
+    "./icons/regardio-system-facets-icon": {
+      "import": "./dist/generated/icons/regardio-system-facets-icon.mjs",
+      "types": "./dist/generated/icons/regardio-system-facets-icon.d.mts"
     },
     "./icons/regardio-system-icon": {
       "import": "./dist/generated/icons/regardio-system-icon.mjs",
       "types": "./dist/generated/icons/regardio-system-icon.d.mts"
     },
-    "./icons/regardio-system-plan-icon": {
-      "import": "./dist/generated/icons/regardio-system-plan-icon.mjs",
-      "types": "./dist/generated/icons/regardio-system-plan-icon.d.mts"
+    "./icons/regardio-system-needs-icon": {
+      "import": "./dist/generated/icons/regardio-system-needs-icon.mjs",
+      "types": "./dist/generated/icons/regardio-system-needs-icon.d.mts"
     },
-    "./icons/regardio-system-pursuit-icon": {
-      "import": "./dist/generated/icons/regardio-system-pursuit-icon.mjs",
-      "types": "./dist/generated/icons/regardio-system-pursuit-icon.d.mts"
+    "./icons/regardio-system-plans-icon": {
+      "import": "./dist/generated/icons/regardio-system-plans-icon.mjs",
+      "types": "./dist/generated/icons/regardio-system-plans-icon.d.mts"
     },
-    "./icons/regardio-system-spark-icon": {
-      "import": "./dist/generated/icons/regardio-system-spark-icon.mjs",
-      "types": "./dist/generated/icons/regardio-system-spark-icon.d.mts"
+    "./icons/regardio-system-pursuits-icon": {
+      "import": "./dist/generated/icons/regardio-system-pursuits-icon.mjs",
+      "types": "./dist/generated/icons/regardio-system-pursuits-icon.d.mts"
     },
     "./sprites/compass-sprite": {
       "import": "./dist/generated/sprites/compass-sprite.mjs",
