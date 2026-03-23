@@ -5,7 +5,7 @@ interface SVGRProps {
   title?: string;
   titleId?: string;
 }
-const SvgSystemLayerNeedsIcon = ({
+const SvgSystemLayerSourcesIcon = ({
   title,
   titleId,
   ...props
@@ -20,9 +20,9 @@ const SvgSystemLayerNeedsIcon = ({
   >
     {title ? <title id={titleId}>{title}</title> : null}
     <path
-      className="fill-yellow-400"
-      d="M513.22 155.71c163.86 303.8 129.87 268.01 359.22 700.15 4.31 8.12-.81 18.53-9.07 18.13l-350.8-16.8c-.28-.01-.57-.01-.85 0l-351.15 9.12c-8.25.4-13.25-9.95-9.07-18.13 179.32-351.09 146.99-289.15 343.58-691.47 4.07-8.33 13.74-9.16 18.14-1"
+      className="fill-coral-400"
+      d="M872.64 855.73C705.49 488.48 666.9 419.3 516.58 157.05c-5.57-9.72-18.81-9.24-24.35.49C362.09 386.03 296.88 503.12 151.26 848c-3.59 8.51.81 18.66 9.07 18.26l351.37-9.18c.28-.01.57-.01.85 0L863.56 874c8.26.4 12.9-9.85 9.07-18.26z"
     />
   </svg>
 );
-export default SvgSystemLayerNeedsIcon;
+export default SvgSystemLayerSourcesIcon;
