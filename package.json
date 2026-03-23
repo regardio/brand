@@ -81,9 +81,9 @@
       "import": "./dist/generated/icons/system-layer-facets-icon.mjs",
       "types": "./dist/generated/icons/system-layer-facets-icon.d.mts"
     },
-    "./icons/system-layer-needs-icon": {
-      "import": "./dist/generated/icons/system-layer-needs-icon.mjs",
-      "types": "./dist/generated/icons/system-layer-needs-icon.d.mts"
+    "./icons/system-layer-sources-icon": {
+      "import": "./dist/generated/icons/system-layer-sources-icon.mjs",
+      "types": "./dist/generated/icons/system-layer-sources-icon.d.mts"
     },
     "./icons/system-layer-plans-icon": {
       "import": "./dist/generated/icons/system-layer-plans-icon.mjs",

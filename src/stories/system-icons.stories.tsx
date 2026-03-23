@@ -3,9 +3,9 @@ import RegardioSystemIcon from '../generated/icons/regardio-system-icon';
 import SystemLayerBridgesIcon from '../generated/icons/system-layer-bridges-icon';
 import SystemLayerCirclesIcon from '../generated/icons/system-layer-circles-icon';
 import SystemLayerFacetsIcon from '../generated/icons/system-layer-facets-icon';
-import SystemLayerNeedsIcon from '../generated/icons/system-layer-needs-icon';
 import SystemLayerPlansIcon from '../generated/icons/system-layer-plans-icon';
 import SystemLayerPursuitsIcon from '../generated/icons/system-layer-pursuits-icon';
+import SystemLayerSourcesIcon from '../generated/icons/system-layer-sources-icon';
 
 const IconGrid = ({ children }: { children: React.ReactNode }) => (
   <div
@@ -52,8 +52,8 @@ export const AllSystemIcons: StoryObj = {
       <IconCard name="SystemIcon">
         <RegardioSystemIcon />
       </IconCard>
-      <IconCard name="NeedsIcon">
-        <SystemLayerNeedsIcon />
+      <IconCard name="SourcesIcon">
+        <SystemLayerSourcesIcon />
       </IconCard>
       <IconCard name="PursuitsIcon">
         <SystemLayerPursuitsIcon />
