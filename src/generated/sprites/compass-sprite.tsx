@@ -2,106 +2,106 @@ import type React from 'react';
 import type { SVGProps } from 'react';
 
 export type CompassSpriteId =
-  | 'bridge.stance.contradicts'
-  | 'bridge.stance.enables'
-  | 'bridge.stance.extends'
-  | 'bridge.stance.fulfills'
-  | 'bridge.stance.matches'
-  | 'bridge.stance.supports'
-  | 'facet.element.assets'
-  | 'facet.element.means'
-  | 'facet.element.people'
-  | 'facet.element.spaces'
-  | 'facet.element.things'
-  | 'facet.element.times'
-  | 'facet.step.accord.bottom'
-  | 'facet.step.accord.top'
-  | 'facet.step.action.bottom'
-  | 'facet.step.action.top'
-  | 'facet.step.effect.bottom'
-  | 'facet.step.effect.top'
-  | 'facet.step.essence.bottom'
-  | 'facet.step.essence.top'
-  | 'facet.step.impulse.bottom'
-  | 'facet.step.impulse.top'
-  | 'facet.step.signal.bottom'
-  | 'facet.step.signal.top'
-  | 'layer.bridges.stances'
-  | 'layer.facets.elements'
-  | 'layer.facets.steps'
-  | 'layer.needs.drive'
-  | 'layer.needs.leisure'
-  | 'need.drive.flexibility'
-  | 'need.drive.orientation'
-  | 'need.drive.pathways'
-  | 'need.drive.possibilities'
-  | 'need.drive.strength'
-  | 'need.drive.structure'
-  | 'need.leisure.breeze'
-  | 'need.leisure.calm'
-  | 'need.leisure.contemplation'
-  | 'need.leisure.distance'
-  | 'need.leisure.indulgence'
-  | 'need.leisure.inspiration'
-  | 'need.leisure.movement'
-  | 'need.leisure.nearness'
-  | 'need.leisure.nourishment'
-  | 'need.leisure.refreshment'
-  | 'need.leisure.relaxation'
-  | 'need.leisure.relief'
-  | 'pursuit.prospect.flourishing'
-  | 'pursuit.prospect.pointer';
+  | 'bridge-view-contradicts'
+  | 'bridge-view-enables'
+  | 'bridge-view-extends'
+  | 'bridge-view-fulfills'
+  | 'bridge-view-matches'
+  | 'bridge-view-supports'
+  | 'bridges-views'
+  | 'facet-element-means'
+  | 'facet-element-memories'
+  | 'facet-element-people'
+  | 'facet-element-spaces'
+  | 'facet-element-things'
+  | 'facet-element-times'
+  | 'facet-step-accord-bottom'
+  | 'facet-step-accord-top'
+  | 'facet-step-action-bottom'
+  | 'facet-step-action-top'
+  | 'facet-step-effect-bottom'
+  | 'facet-step-effect-top'
+  | 'facet-step-essence-bottom'
+  | 'facet-step-essence-top'
+  | 'facet-step-impulse-bottom'
+  | 'facet-step-impulse-top'
+  | 'facet-step-signal-bottom'
+  | 'facet-step-signal-top'
+  | 'facets-elements'
+  | 'facets-steps'
+  | 'pursuit-foundation-flourishing'
+  | 'pursuit-foundation-pointer'
+  | 'source-drive-flexibility'
+  | 'source-drive-orientation'
+  | 'source-drive-pathways'
+  | 'source-drive-possibilities'
+  | 'source-drive-strength'
+  | 'source-drive-structure'
+  | 'source-leisure-breeze'
+  | 'source-leisure-calm'
+  | 'source-leisure-contemplation'
+  | 'source-leisure-distance'
+  | 'source-leisure-indulgence'
+  | 'source-leisure-inspiration'
+  | 'source-leisure-movement'
+  | 'source-leisure-nearness'
+  | 'source-leisure-nourishment'
+  | 'source-leisure-refreshment'
+  | 'source-leisure-relaxation'
+  | 'source-leisure-relief'
+  | 'sources-drive'
+  | 'sources-leisure';
 
 export const compassSpriteIds: CompassSpriteId[] = [
-  'bridge.stance.contradicts',
-  'bridge.stance.enables',
-  'bridge.stance.extends',
-  'bridge.stance.fulfills',
-  'bridge.stance.matches',
-  'bridge.stance.supports',
-  'facet.element.assets',
-  'facet.element.means',
-  'facet.element.people',
-  'facet.element.spaces',
-  'facet.element.things',
-  'facet.element.times',
-  'facet.step.accord.bottom',
-  'facet.step.accord.top',
-  'facet.step.action.bottom',
-  'facet.step.action.top',
-  'facet.step.effect.bottom',
-  'facet.step.effect.top',
-  'facet.step.essence.bottom',
-  'facet.step.essence.top',
-  'facet.step.impulse.bottom',
-  'facet.step.impulse.top',
-  'facet.step.signal.bottom',
-  'facet.step.signal.top',
-  'layer.bridges.stances',
-  'layer.facets.elements',
-  'layer.facets.steps',
-  'layer.needs.drive',
-  'layer.needs.leisure',
-  'need.drive.flexibility',
-  'need.drive.orientation',
-  'need.drive.pathways',
-  'need.drive.possibilities',
-  'need.drive.strength',
-  'need.drive.structure',
-  'need.leisure.breeze',
-  'need.leisure.calm',
-  'need.leisure.contemplation',
-  'need.leisure.distance',
-  'need.leisure.indulgence',
-  'need.leisure.inspiration',
-  'need.leisure.movement',
-  'need.leisure.nearness',
-  'need.leisure.nourishment',
-  'need.leisure.refreshment',
-  'need.leisure.relaxation',
-  'need.leisure.relief',
-  'pursuit.prospect.flourishing',
-  'pursuit.prospect.pointer',
+  'bridge-view-contradicts',
+  'bridge-view-enables',
+  'bridge-view-extends',
+  'bridge-view-fulfills',
+  'bridge-view-matches',
+  'bridge-view-supports',
+  'bridges-views',
+  'facet-element-means',
+  'facet-element-memories',
+  'facet-element-people',
+  'facet-element-spaces',
+  'facet-element-things',
+  'facet-element-times',
+  'facet-step-accord-bottom',
+  'facet-step-accord-top',
+  'facet-step-action-bottom',
+  'facet-step-action-top',
+  'facet-step-effect-bottom',
+  'facet-step-effect-top',
+  'facet-step-essence-bottom',
+  'facet-step-essence-top',
+  'facet-step-impulse-bottom',
+  'facet-step-impulse-top',
+  'facet-step-signal-bottom',
+  'facet-step-signal-top',
+  'facets-elements',
+  'facets-steps',
+  'pursuit-foundation-flourishing',
+  'pursuit-foundation-pointer',
+  'source-drive-flexibility',
+  'source-drive-orientation',
+  'source-drive-pathways',
+  'source-drive-possibilities',
+  'source-drive-strength',
+  'source-drive-structure',
+  'source-leisure-breeze',
+  'source-leisure-calm',
+  'source-leisure-contemplation',
+  'source-leisure-distance',
+  'source-leisure-indulgence',
+  'source-leisure-inspiration',
+  'source-leisure-movement',
+  'source-leisure-nearness',
+  'source-leisure-nourishment',
+  'source-leisure-refreshment',
+  'source-leisure-relaxation',
+  'source-leisure-relief',
+  'sources-drive',
+  'sources-leisure',
 ];
 
 export interface CompassSpriteProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
@@ -116,8 +116,8 @@ export interface CompassSpriteProps extends Omit<SVGProps<SVGSVGElement>, 'child
  *
  * Usage:
  * ```tsx
- * <CompassSprite id="facet.step.action.bottom" className="w-8 h-8" />
- * <CompassSprite id="need.drive.possibilities" size={24} />
+ * <CompassSprite id="facet-step-action-bottom" className="w-8 h-8" />
+ * <CompassSprite id="source-drive-possibilities" size={24} />
  * ```
  *
  * Note: The compass-base.svg sprite file must be available in your application.

@@ -33,7 +33,7 @@ function extractSpritesFromSVG(svgContent: string): SpriteInfo[] {
       && idMatch
       && !seenIds.has(idMatch)
       && idMatch.length > 1
-      && idMatch.includes('.')
+      && idMatch.includes('-')
     ) {
       sprites.push({ id: idMatch, viewBox: viewBoxMatch });
       seenIds.add(idMatch);
@@ -68,8 +68,8 @@ export interface CompassSpriteProps extends Omit<SVGProps<SVGSVGElement>, 'child
  *
  * Usage:
  * \`\`\`tsx
- * <CompassSprite id="facet.step.action.bottom" className="w-8 h-8" />
- * <CompassSprite id="need.drive.possibilities" size={24} />
+ * <CompassSprite id="facet-step-action-bottom" className="w-8 h-8" />
+ * <CompassSprite id="source-drive-possibilities" size={24} />
  * \`\`\`
  *
  * Note: The compass-base.svg sprite file must be available in your application.

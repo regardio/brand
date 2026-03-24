@@ -81,7 +81,7 @@ function App() {
       <RegardioLogoColor style={{ width: 200 }} />
       <RegardioIconColor style={{ fontSize: 48 }} />
       <SystemLayerSourcesIcon style={{ fontSize: 32 }} />
-      <CompassSprite id="need.leisure.calm" width={80} height={80} />
+      <CompassSprite id="source-leisure-calm" width={80} height={80} />
     </CompassSpriteProvider>
   );
 }
@@ -109,9 +109,9 @@ Then use `CompassSprite` anywhere in your app to reference sprites by ID:
 ```tsx
 import { CompassSprite } from "@regardio/brand/sprites/compass-sprite";
 
-<CompassSprite id="need.leisure.calm" width={80} height={80} />
-<CompassSprite id="facet.element.people" width={60} height={80} />
-<CompassSprite id="bridge.stance.enables" width={100} height={70} />
+<CompassSprite id="source-leisure-calm" width={80} height={80} />
+<CompassSprite id="facet-element-people" width={60} height={80} />
+<CompassSprite id="bridge-view-enables" width={100} height={70} />
 ```
 
 ### Regardio Color Scheme with Tailwind CSS

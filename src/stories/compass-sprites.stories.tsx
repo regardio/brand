@@ -66,11 +66,11 @@ const meta: Meta = {
 
 export default meta;
 
-export const LeisureNeeds: StoryObj = {
+export const SourceLeisure: StoryObj = {
   render: () => (
     <SpriteGrid>
       {compassSpriteIds
-        .filter((id) => id.startsWith('needs.leisure.'))
+        .filter((id) => id.startsWith('source-leisure-'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -81,11 +81,11 @@ export const LeisureNeeds: StoryObj = {
   ),
 };
 
-export const DriveNeeds: StoryObj = {
+export const SourceDrive: StoryObj = {
   render: () => (
     <SpriteGrid>
       {compassSpriteIds
-        .filter((id) => id.startsWith('needs.drive.'))
+        .filter((id) => id.startsWith('source-drive-'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -100,7 +100,7 @@ export const FacetElements: StoryObj = {
   render: () => (
     <SpriteGrid>
       {compassSpriteIds
-        .filter((id) => id.startsWith('facets.elements.'))
+        .filter((id) => id.startsWith('facet-element-'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -115,7 +115,7 @@ export const FacetSteps: StoryObj = {
   render: () => (
     <SpriteGrid>
       {compassSpriteIds
-        .filter((id) => id.startsWith('facets.steps.'))
+        .filter((id) => id.startsWith('facet-step-'))
         .map((id) => (
           <SpriteCard
             id={id}
@@ -126,11 +126,11 @@ export const FacetSteps: StoryObj = {
   ),
 };
 
-export const BridgeStances: StoryObj = {
+export const BridgeViews: StoryObj = {
   render: () => (
     <SpriteGrid>
       {compassSpriteIds
-        .filter((id) => id.startsWith('bridges.stances.'))
+        .filter((id) => id.startsWith('bridge-view-'))
         .map((id) => (
           <SpriteCard
             id={id}
