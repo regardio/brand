@@ -71,7 +71,7 @@ Generated React components are exported from the package:
 ```tsx
 import { RegardioLogoColor } from "@regardio/brand/icons/regardio-logo-color";
 import { RegardioIconColor } from "@regardio/brand/icons/regardio-icon-color";
-import { SystemLayerSourcesIcon } from "@regardio/brand/icons/system-layer-sources-icon";
+import { SystemFieldSourcesIcon } from "@regardio/brand/icons/system-layer-sources-icon";
 import { CompassSprite } from "@regardio/brand/sprites/compass-sprite";
 import { CompassSpriteProvider } from "@regardio/brand/sprites/compass-sprite-provider";
 
@@ -80,7 +80,7 @@ function App() {
     <CompassSpriteProvider>
       <RegardioLogoColor style={{ width: 200 }} />
       <RegardioIconColor style={{ fontSize: 48 }} />
-      <SystemLayerSourcesIcon style={{ fontSize: 32 }} />
+      <SystemFieldSourcesIcon style={{ fontSize: 32 }} />
       <CompassSprite id="source-leisure-calm" width={80} height={80} />
     </CompassSpriteProvider>
   );

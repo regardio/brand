@@ -8,13 +8,14 @@ export type CompassSpriteId =
   | 'bridge-view-fulfills'
   | 'bridge-view-matches'
   | 'bridge-view-supports'
-  | 'bridges-views'
+  | 'bridge-views'
   | 'facet-element-means'
-  | 'facet-element-memories'
   | 'facet-element-people'
+  | 'facet-element-reasons'
   | 'facet-element-spaces'
   | 'facet-element-things'
   | 'facet-element-times'
+  | 'facet-elements'
   | 'facet-step-accord-bottom'
   | 'facet-step-accord-top'
   | 'facet-step-action-bottom'
@@ -27,30 +28,29 @@ export type CompassSpriteId =
   | 'facet-step-impulse-top'
   | 'facet-step-signal-bottom'
   | 'facet-step-signal-top'
-  | 'facets-elements'
-  | 'facets-steps'
-  | 'pursuit-foundation-flourishing'
-  | 'pursuit-foundation-pointer'
+  | 'pursuit-pointer'
+  | 'pursuit-trait-flourishing'
   | 'source-drive-flexibility'
   | 'source-drive-orientation'
   | 'source-drive-pathways'
   | 'source-drive-possibilities'
   | 'source-drive-strength'
   | 'source-drive-structure'
+  | 'source-drive'
   | 'source-leisure-breeze'
   | 'source-leisure-calm'
   | 'source-leisure-contemplation'
   | 'source-leisure-distance'
   | 'source-leisure-indulgence'
   | 'source-leisure-inspiration'
+  | 'source-leisure-inspiration_1'
   | 'source-leisure-movement'
   | 'source-leisure-nearness'
   | 'source-leisure-nourishment'
   | 'source-leisure-refreshment'
   | 'source-leisure-relaxation'
   | 'source-leisure-relief'
-  | 'sources-drive'
-  | 'sources-leisure';
+  | 'source-leisure';
 
 export const compassSpriteIds: CompassSpriteId[] = [
   'bridge-view-contradicts',
@@ -59,13 +59,14 @@ export const compassSpriteIds: CompassSpriteId[] = [
   'bridge-view-fulfills',
   'bridge-view-matches',
   'bridge-view-supports',
-  'bridges-views',
+  'bridge-views',
   'facet-element-means',
-  'facet-element-memories',
   'facet-element-people',
+  'facet-element-reasons',
   'facet-element-spaces',
   'facet-element-things',
   'facet-element-times',
+  'facet-elements',
   'facet-step-accord-bottom',
   'facet-step-accord-top',
   'facet-step-action-bottom',
@@ -78,30 +79,29 @@ export const compassSpriteIds: CompassSpriteId[] = [
   'facet-step-impulse-top',
   'facet-step-signal-bottom',
   'facet-step-signal-top',
-  'facets-elements',
-  'facets-steps',
-  'pursuit-foundation-flourishing',
-  'pursuit-foundation-pointer',
+  'pursuit-pointer',
+  'pursuit-trait-flourishing',
   'source-drive-flexibility',
   'source-drive-orientation',
   'source-drive-pathways',
   'source-drive-possibilities',
   'source-drive-strength',
   'source-drive-structure',
+  'source-drive',
   'source-leisure-breeze',
   'source-leisure-calm',
   'source-leisure-contemplation',
   'source-leisure-distance',
   'source-leisure-indulgence',
   'source-leisure-inspiration',
+  'source-leisure-inspiration_1',
   'source-leisure-movement',
   'source-leisure-nearness',
   'source-leisure-nourishment',
   'source-leisure-refreshment',
   'source-leisure-relaxation',
   'source-leisure-relief',
-  'sources-drive',
-  'sources-leisure',
+  'source-leisure',
 ];
 
 export interface CompassSpriteProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {

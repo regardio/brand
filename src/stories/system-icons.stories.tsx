@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import RegardioSystemIcon from '../generated/icons/regardio-system-icon';
-import SystemLayerBridgesIcon from '../generated/icons/system-layer-bridges-icon';
-import SystemLayerCirclesIcon from '../generated/icons/system-layer-circles-icon';
-import SystemLayerFacetsIcon from '../generated/icons/system-layer-facets-icon';
-import SystemLayerPlansIcon from '../generated/icons/system-layer-plans-icon';
-import SystemLayerPursuitsIcon from '../generated/icons/system-layer-pursuits-icon';
-import SystemLayerSourcesIcon from '../generated/icons/system-layer-sources-icon';
+import SystemFieldBridgesIcon from '../generated/icons/system-layer-bridges-icon';
+import SystemFieldCirclesIcon from '../generated/icons/system-layer-circles-icon';
+import SystemFieldFacetsIcon from '../generated/icons/system-layer-facets-icon';
+import SystemFieldPlansIcon from '../generated/icons/system-layer-plans-icon';
+import SystemFieldPursuitsIcon from '../generated/icons/system-layer-pursuits-icon';
+import SystemFieldSourcesIcon from '../generated/icons/system-layer-sources-icon';
 
 const IconGrid = ({ children }: { children: React.ReactNode }) => (
   <div
@@ -53,22 +53,22 @@ export const AllSystemIcons: StoryObj = {
         <RegardioSystemIcon />
       </IconCard>
       <IconCard name="SourcesIcon">
-        <SystemLayerSourcesIcon />
+        <SystemFieldSourcesIcon />
       </IconCard>
       <IconCard name="PursuitsIcon">
-        <SystemLayerPursuitsIcon />
+        <SystemFieldPursuitsIcon />
       </IconCard>
       <IconCard name="CirclesIcon">
-        <SystemLayerCirclesIcon />
+        <SystemFieldCirclesIcon />
       </IconCard>
       <IconCard name="FacetsIcon">
-        <SystemLayerFacetsIcon />
+        <SystemFieldFacetsIcon />
       </IconCard>
       <IconCard name="PlansIcon">
-        <SystemLayerPlansIcon />
+        <SystemFieldPlansIcon />
       </IconCard>
       <IconCard name="BridgesIcon">
-        <SystemLayerBridgesIcon />
+        <SystemFieldBridgesIcon />
       </IconCard>
     </IconGrid>
   ),
