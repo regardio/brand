@@ -1,5 +1,9 @@
 # @regardio/brand
 
+## [0.10.0] - 2026-03-25
+
+- refactor: compass cards
+
 ## [0.9.0] - 2026-03-25
 
 - chore: deps
