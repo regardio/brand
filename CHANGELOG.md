@@ -1,5 +1,13 @@
 # @regardio/brand
 
+## [0.9.0] - 2026-03-25
+
+- chore: deps
+- refactor: compass sprites
+- refactor: stories
+- refactor: system icons
+- chore: deps
+
 ## [0.8.2] - 2026-03-19
 
 - refactor: asset names
