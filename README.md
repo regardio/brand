@@ -202,4 +202,4 @@ See [Grid System documentation](./docs/grid-system.md) for complete usage guide.
 ---
 
 *Part of the [Regardio Ensemble](https://regard.io/ensemble) toolkit for
-collective well-being.*
+shared well-being.*
