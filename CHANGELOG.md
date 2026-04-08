@@ -1,5 +1,18 @@
 # @regardio/brand
 
+## [0.11.0] - 2026-04-08
+
+- chore(@regardio/brand): upgrade dependencies
+- chore: deps
+- chore(@regardio/brand): upgrade dependencies
+- chore: update workflow packages
+- chore: deps
+- chore(@regardio/brand): upgrade dependencies
+- chore: deps
+- chore: deps
+- chore: deps
+- fix: husky
+
 ## [0.10.0] - 2026-03-25
 
 - refactor: compass cards
