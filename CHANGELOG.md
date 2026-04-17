@@ -1,5 +1,11 @@
 # @regardio/brand
 
+## [0.12.0] - 2026-04-17
+
+- refactor: brand color names
+- chore(@regardio/brand): upgrade dependencies
+- chore(@regardio/brand): upgrade dependencies
+
 ## [0.11.0] - 2026-04-08
 
 - chore(@regardio/brand): upgrade dependencies
