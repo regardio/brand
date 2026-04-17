@@ -125,7 +125,7 @@ Import `colors.css` to use the Regardio color palette with Tailwind CSS v4:
 This provides CSS custom properties using the `@theme` directive, making colors
 available as Tailwind utilities. The palette includes:
 
-- **coral**, **orange**, **yellow**, **olive**, **lime**, **green**, **teal**, **cyan**, **blue**, **purple**, **pink**, **red** — full spectrum
+- **coral**, **orange**, **yellow**, **olive**, **lime**, **green**, **teal**, **aqua**, **blue**, **violet**, **plum**, **red** — full spectrum
 - **gray** — neutral tones with warm undertones
 - **white**, **black** — base colors
 
@@ -134,7 +134,7 @@ Each color has shades from `50` (lightest) to `950` (darkest):
 ```html
 <div class="bg-coral-500 text-white">Coral background</div>
 <div class="text-teal-700">Teal text</div>
-<div class="border-purple-300">Purple border</div>
+<div class="border-violet-300">Violet border</div>
 ```
 
 The compass sprites use these colors via Tailwind classes (e.g., `fill-green-300`),

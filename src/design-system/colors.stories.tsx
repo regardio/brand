@@ -41,10 +41,10 @@ export const ColorPalette: Story = {
       'lime',
       'green',
       'teal',
-      'cyan',
+      'aqua',
       'blue',
-      'purple',
-      'pink',
+      'violet',
+      'plum',
       'red',
       'gray',
     ];
