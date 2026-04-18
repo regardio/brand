@@ -11,9 +11,9 @@ export type CompassSpriteId =
   | 'bridge-views'
   | 'facet-element-means'
   | 'facet-element-people'
-  | 'facet-element-reasons'
   | 'facet-element-spaces'
   | 'facet-element-things'
+  | 'facet-element-thoughts'
   | 'facet-element-times'
   | 'facet-elements'
   | 'facet-step-accord-bottom'
@@ -62,9 +62,9 @@ export const compassSpriteIds: CompassSpriteId[] = [
   'bridge-views',
   'facet-element-means',
   'facet-element-people',
-  'facet-element-reasons',
   'facet-element-spaces',
   'facet-element-things',
+  'facet-element-thoughts',
   'facet-element-times',
   'facet-elements',
   'facet-step-accord-bottom',
